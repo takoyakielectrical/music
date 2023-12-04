@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
- <header>
-        <h1>Music Maker(仮)</h1>
- </header>
- <body>
- <<input type="button" id="b1" value="ボタン1" onclick="play()">>
- </body>    
 
-<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
-<script th:src="@{../js/musicplay.js}" src="../js/musicplay.js">
+<head>
+	<meta charset="UTF-8">
+	<title>こんにちはタイトル</title>
+</head>
+
+<body>
+	<header>
+		<h1>Music Maker(仮)</h1>
+	</header>
+
+	<input type="button" id="b1" value="ボタン1" onclick="play('./music/ああああ.wav')">
+	<input type="button" id="b2" value="ボタン2" onclick="play('./music/test4秒.wav')">
+	<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
+	<script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
+	<img  class="img" th:src="@{/img/ayumi.png}">
+		
 </body>
-</html>
