@@ -11,9 +11,9 @@
 		<h1>Music Maker(仮)</h1>
 	</header>
 
-	<input type="button" id="b1" value="ボタン1" onclick="play('./music/ああああ.wav')">
-	<input type="button" id="b2" value="ボタン2" onclick="play('./music/test4秒.wav')">
-	<input type="button" id="b3" value="ボタン3" onclick="play('./music/test2.wav')">
+	<input type="button" id="b1" value="ボタン1" onclick="play('./music/ああああ.wav');toggleSlideshow();">
+	<input type="button" id="b2" value="ボタン2" onclick="play('./music/test4秒.wav');toggleSlideshow();">
+	<input type="button" id="b3" value="ボタン3" onclick="play('./music/test2.wav');toggleSlideshow();">
 	<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
 	<div id="slideshow-container">
     <img class="mySlides" th:src="@{/img/riosesuri.png}" src="../static/img/riosesuri.png" alt="Image 1">

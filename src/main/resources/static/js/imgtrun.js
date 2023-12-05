@@ -1,4 +1,5 @@
 var slideIndex = 0;
+var slideshowPaused = false;
 showSlides();
 
 function showSlides() {
@@ -12,5 +13,15 @@ function showSlides() {
         slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000); // 2秒ごとに画像を切り替える場合
+     slideInterval = setTimeout(showSlides, 100); //0.1秒ごとに画像を切り替える場合
+}
+function toggleSlideshow() {
+    
+    if (slideshowPaused) {
+        slideshowPaused = false;
+        showSlides();
+    } else {
+        slideshowPaused = true;
+        clearTimeout(slideInterval);
+    }
 }
