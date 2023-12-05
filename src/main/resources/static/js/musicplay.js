@@ -1,5 +1,3 @@
-
-
 const musics = [];
 let iiyo = true;
 let isPlaying = false;
@@ -31,11 +29,16 @@ async function playLoop() {
     while (true) {
         if (!isPlaying) {
             isPlaying = true;
-            await Promise.all(musics.map((music, index) => playMusic(index)));
+            await Promise.all(musics.map((_, index) => playMusic(index)));
             isPlaying = false;
         }
     }
 }
+
+// ページがアンロードされる前に再生を停止する
+window.addEventListener('beforeunload', () => {
+    musics.forEach(music => music.pause());
+});
 
 // ボタンのクリックごとに新しい音楽が追加され、新しい playLoop が開始されるのを防ぐ
 // 1つの playLoop で全ての音楽が再生されるように修正
@@ -49,4 +52,3 @@ async function play(url) {
         playLoop();
     }
 }
-
