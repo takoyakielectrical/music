@@ -16,6 +16,8 @@ async function playMusic(index) {
     const music = musics[index];
 
     return new Promise((resolve) => {
+        const offset = 0.025; // 次の曲を開始するタイミングのオフセット（秒）
+
         music.addEventListener('ended', () => {
             resolve();
         });
@@ -25,12 +27,17 @@ async function playMusic(index) {
 
         music.play()
             .then(() => {
-                console.log("Played:", decodeURI(music.src));
+                console.log("Played:", music.src);
             })
             .catch((error) => {
                 console.error("Error playing music:", error);
                 resolve();
             });
+        
+        // 次の曲を開始するタイミングを設定
+        setTimeout(() => {
+            resolve();
+        }, (music.duration - offset) * 1000);
     });
 }
 
@@ -48,10 +55,10 @@ window.addEventListener('beforeunload', () => {
 
 // 新しい音楽を追加し、再生を制御する関数
 async function play(url) {
-    const music = new Audio(encodeURI(url)); // ファイル名をエンコード
+    const music = new Audio(url);
     musics.push(music);
 
-    console.log("Added:", decodeURI(url));
+    console.log("Added:", url);
 
     // 既に再生中でない場合のみ新しい playLoop を開始
     if (!isPlaying) {
