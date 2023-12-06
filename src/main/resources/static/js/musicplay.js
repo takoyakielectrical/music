@@ -25,7 +25,7 @@ async function playMusic(index) {
 
         music.play()
             .then(() => {
-                console.log("Played:", music.src);
+                console.log("Played:", decodeURI(music.src));
             })
             .catch((error) => {
                 console.error("Error playing music:", error);
@@ -48,10 +48,10 @@ window.addEventListener('beforeunload', () => {
 
 // 新しい音楽を追加し、再生を制御する関数
 async function play(url) {
-    const music = new Audio(url);
+    const music = new Audio(encodeURI(url)); // ファイル名をエンコード
     musics.push(music);
 
-    console.log("Added:", url);
+    console.log("Added:", decodeURI(url));
 
     // 既に再生中でない場合のみ新しい playLoop を開始
     if (!isPlaying) {
