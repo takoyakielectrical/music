@@ -18,7 +18,7 @@ async function playMusic(index) {
     currentMusic = music; // 現在の音楽を更新
 
     return new Promise((resolve) => {
-        const offset = 0.019; // 次の曲を開始するタイミングのオフセット（秒）
+        const offset = 0.015; // 次の曲を開始するタイミングのオフセット（秒）
 
         music.addEventListener('ended', () => {
             resolve();
@@ -96,9 +96,7 @@ document.getElementById('b2').addEventListener('click', () => {
     play('./music/test4秒.wav');
 });
 document.getElementById('b3').addEventListener('click', () => {
-    if (!currentMusic || currentMusic.src !== './music/test2.wav') {
-        play('./music/test2.wav');
-    }
+    play('./music/test2.wav');
 });
 document.getElementById('b4').addEventListener('click', () => {
     play('./music/test.wav');
