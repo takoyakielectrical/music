@@ -8,22 +8,18 @@
 <body>
 	<div class="container">
 		<h1>
-			<a class="navbar-brand title-font" th:href="@{/}">WebPortal.com</a>
+			<a class="navbar-brand title-font" th:href="@{/}">EchoEnsemble</a>
 		</h1>
 		<hr>
-				<div class="input-form">
+		<img th:src="@{/img/nonchan.png}" src="../static/img/nonchan.png">
+	</div>
 
-			<div class="row justify-content-center">
-				<div class="col-md-6">
-					<form method="post" th:action="@{/play}">
-						<button type="submit" class="playButton">PLAY</button>
-					</form>
-				</div>
-			</div>
-		</div>
-
-		<!-- 共通領域 -->
-
+	<!-- 共通領域 -->
+	<script>
+		setTimeout(function () {
+			window.location.href = '/play';
+		}, 5 * 1000);
+	</script>
 </body>
 
 </html>

@@ -2,7 +2,6 @@ package jp.ac.hcs.s3a120.main;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class mainController {
@@ -11,7 +10,7 @@ public class mainController {
 		return "index";
 	}
 
-	@PostMapping("/play")
+	@GetMapping("/play")
 	public String play() {
 		return "play";
 	}
