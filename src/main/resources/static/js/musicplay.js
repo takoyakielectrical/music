@@ -1,6 +1,7 @@
 const musics = [];
 let isPlaying = false;
 let loopPromise;
+let currentMusic; // 現在再生中の音楽
 
 // 音楽ファイルをプリロードする関数
 function preloadMusic(url) {
@@ -14,9 +15,10 @@ function preloadMusic(url) {
 // 音楽を再生する関数
 async function playMusic(index) {
     const music = musics[index];
+    currentMusic = music; // 現在の音楽を更新
 
     return new Promise((resolve) => {
-        const offset = 0.025; // 次の曲を開始するタイミングのオフセット（秒）
+        const offset = 0.019; // 次の曲を開始するタイミングのオフセット（秒）
 
         music.addEventListener('ended', () => {
             resolve();
@@ -33,7 +35,7 @@ async function playMusic(index) {
                 console.error("Error playing music:", error);
                 resolve();
             });
-        
+
         // 次の曲を開始するタイミングを設定
         setTimeout(() => {
             resolve();
@@ -50,15 +52,27 @@ async function playLoop() {
 
 // ページがアンロードされる前に再生を停止する
 window.addEventListener('beforeunload', () => {
-    musics.forEach(music => music.pause());
+    if (currentMusic) {
+        currentMusic.pause();
+        currentMusic = null;
+    }
 });
 
 // 新しい音楽を追加し、再生を制御する関数
 async function play(url) {
+    // 同じ曲が既に再生中である場合は何もしない
+    if (currentMusic && currentMusic.src === url) {
+        return;
+    }
+
+    // 既に再生中の音楽があれば停止
+    if (currentMusic) {
+        currentMusic.pause();
+        currentMusic = null;
+    }
+
     const music = new Audio(url);
     musics.push(music);
-
-    console.log("Added:", url);
 
     // 既に再生中でない場合のみ新しい playLoop を開始
     if (!isPlaying) {
@@ -68,9 +82,10 @@ async function play(url) {
         // 既存の playLoop がある場合はそれが終わるまで待機してから新しい playLoop を開始
         await loopPromise;
         isPlaying = false;
-        isPlaying = true;
         loopPromise = playLoop();
     }
+
+    console.log("Added:", url);
 }
 
 // ボタンがクリックされたときに play 関数を呼ぶ
@@ -81,7 +96,9 @@ document.getElementById('b2').addEventListener('click', () => {
     play('./music/test4秒.wav');
 });
 document.getElementById('b3').addEventListener('click', () => {
-    play('./music/test2.wav');
+    if (!currentMusic || currentMusic.src !== './music/test2.wav') {
+        play('./music/test2.wav');
+    }
 });
 document.getElementById('b4').addEventListener('click', () => {
     play('./music/test.wav');
