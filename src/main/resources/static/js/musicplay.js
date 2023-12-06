@@ -1,37 +1,43 @@
 const musics = [];
-let iiyo = true;
 let isPlaying = false;
+let loopPromise;
 
+// 音楽ファイルをプリロードする関数
+function preloadMusic(url) {
+    return new Promise((resolve, reject) => {
+        const music = new Audio(url);
+        music.addEventListener('canplaythrough', () => resolve(music));
+        music.addEventListener('error', reject);
+    });
+}
+
+// 音楽を再生する関数
 async function playMusic(index) {
+    const music = musics[index];
+
     return new Promise((resolve) => {
-        const music = musics[index];
+        music.addEventListener('ended', () => {
+            resolve();
+        });
 
-        if (index === 0) {
-            music.addEventListener('ended', () => {
-                resolve();
-            });
-        }
+        // 再生前に再生位置をリセット
+        music.currentTime = 0;
 
-        iiyo = true;
         music.play()
             .then(() => {
-                iiyo = false;
-                console.log(iiyo);
+                console.log("Played:", music.src);
             })
             .catch((error) => {
                 console.error("Error playing music:", error);
-                resolve(); // Resolve the promise even if there is an error
+                resolve();
             });
     });
 }
 
+// 音楽を無限に再生するループ
 async function playLoop() {
     while (true) {
-        if (!isPlaying) {
-            isPlaying = true;
-            await Promise.all(musics.map((_, index) => playMusic(index)));
-            isPlaying = false;
-        }
+        await Promise.all(musics.map((_, index) => playMusic(index)));
     }
 }
 
@@ -40,15 +46,39 @@ window.addEventListener('beforeunload', () => {
     musics.forEach(music => music.pause());
 });
 
-// ボタンのクリックごとに新しい音楽が追加され、新しい playLoop が開始されるのを防ぐ
-// 1つの playLoop で全ての音楽が再生されるように修正
+// 新しい音楽を追加し、再生を制御する関数
 async function play(url) {
     const music = new Audio(url);
     musics.push(music);
 
-    console.log(url);
+    console.log("Added:", url);
 
+    // 既に再生中でない場合のみ新しい playLoop を開始
     if (!isPlaying) {
-        playLoop();
+        isPlaying = true;
+        loopPromise = playLoop();
+    } else {
+        // 既存の playLoop がある場合はそれが終わるまで待機してから新しい playLoop を開始
+        await loopPromise;
+        isPlaying = false;
+        isPlaying = true;
+        loopPromise = playLoop();
     }
 }
+
+// ボタンがクリックされたときに play 関数を呼ぶ
+document.getElementById('b1').addEventListener('click', () => {
+    play('./music/ああああ.wav');
+});
+document.getElementById('b2').addEventListener('click', () => {
+    play('./music/test4秒.wav');
+});
+document.getElementById('b3').addEventListener('click', () => {
+    play('./music/test2.wav');
+});
+document.getElementById('b4').addEventListener('click', () => {
+    play('./music/test.wav');
+});
+document.getElementById('b5').addEventListener('click', () => {
+    play('./music/test3.wav');
+});
