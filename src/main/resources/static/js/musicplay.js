@@ -1,128 +1,118 @@
-const musics = [];
-let isPlaying = false;
-let loopPromise;
-let currentMusic; // 現在再生中の音楽
-
-// 音楽ファイルをプリロードする関数
-function preloadMusic(url) {
-    return new Promise((resolve, reject) => {
-        const music = new Audio(url);
-        music.addEventListener('canplaythrough', () => resolve(music));
-        music.addEventListener('error', reject);
-    });
-}
-
-async function playMusic(index) {
-    const music = musics[index];
-    currentMusic = music; // 現在の音楽を更新
-
-    return new Promise((resolve) => {
-        const offset = 0.017; // 次の曲を開始するタイミングのオフセット（秒）
-
-        music.addEventListener('ended', () => {
-            // 音楽が終了したら musics から削除
-            const indexToRemove = musics.findIndex((m) => m.src === music.src);
-            if (indexToRemove !== -1) {
-                musics.splice(indexToRemove, 1);
-            }
-
-            // 再生が終了したら停止
-            stopMusic(music);
-
-            resolve();
-        });
-
-        // 再生前に再生位置をリセット
-        music.currentTime = 0;
-
-        // 音楽が既に再生中でない場合にのみ再生
-        if (music.paused) {
-            music.play()
-                .then(() => {
-                    console.log("Played:", music.src);
-                })
-                .catch((error) => {
-                    console.error("Error playing music:", error);
-                    resolve();
-                });
-        }
-
-        // 次の曲を開始するタイミングを設定
-        setTimeout(() => {
-            resolve();
-        }, (music.duration - offset) * 1000);
-    });
-}
-
-// 音楽を無限に再生するループ
-async function playLoop() {
-    while (true) {
-        await Promise.all(musics.map((_, index) => playMusic(index)));
-    }
-}
-
-// ページがアンロードされる前に再生を停止する
-window.addEventListener('beforeunload', () => {
-    if (currentMusic) {
-        currentMusic.pause();
-        currentMusic = null;
-    }
-});
-
-// 音楽を停止する関数
-function stopMusic(music) {
-    if (music) {
-        music.pause();
-        music.currentTime = 0;
-    }
-}
-
-// 新しい音楽を追加し、再生を制御する関数
-async function play(url) {
-    const existingIndex = musics.findIndex((music) => music.src === url);
-
-    if (existingIndex !== -1) {
-        // 既に存在する音楽を停止
-        const existingMusic = musics[existingIndex];
-        stopMusic(existingMusic);
-
-        // 既に存在する音楽を削除
-        musics.splice(existingIndex, 1);
+ // Audio要素を作成
+  var audio1 = new Audio('./music/test.wav');
+   // Audio要素を作成
+  var audio2= new Audio('./music/test2.wav');
+   // Audio要素を作成
+  var audio3 = new Audio('./music/test3.wav');
+   // Audio要素を作成
+  var audio4 = new Audio('./music/test4.wav');
+   // Audio要素を作成
+  var audio5 = new Audio('./music/test4秒.wav');
+  
+  // ボタンの要素を取得
+  var playPauseButton1 = document.getElementById('b1');
+   // ボタンの要素を取得
+  var playPauseButton2 = document.getElementById('b2');
+   // ボタンの要素を取得
+  var playPauseButton3 = document.getElementById('b3');
+   // ボタンの要素を取得
+  var playPauseButton4 = document.getElementById('b4');
+   // ボタンの要素を取得
+  var playPauseButton5 = document.getElementById('b5');
+  
+  
+  // 再生/停止の状態を判定する変数
+  var isPlaying1 = false;
+    // 再生/停止の状態を判定する変数
+  var isPlaying2 = false;
+    // 再生/停止の状態を判定する変数
+  var isPlaying3 = false;
+    // 再生/停止の状態を判定する変数
+  var isPlaying4 = false;
+    // 再生/停止の状態を判定する変数
+  var isPlaying5 = false;
+  
+  // ボタンがクリックされたときの処理
+  playPauseButton1.addEventListener('click', function() {
+    if (isPlaying1) {
+      // 再生中なら停止する
+      audio1.pause();
+      audio1.currentTime = 0; // 再生位置を初期化
     } else {
-        // 新しい音楽を追加
-        const music = new Audio(url);
-        musics.push(music);
+      // 停止中なら再生する
+      // ループを設定
+		audio1.loop = true;
+      audio1.play();
     }
-
-    // 既に再生中の音楽がある場合は終了まで待機
-    if (isPlaying) {
-        await loopPromise;
+    
+    // 状態を切り替える
+    isPlaying1 = !isPlaying1;
+  });
+  
+  // ボタンがクリックされたときの処理
+  playPauseButton2.addEventListener('click', function() {
+    if (isPlaying2) {
+      // 再生中なら停止する
+      audio2.pause();
+      audio2.currentTime = 0; // 再生位置を初期化
+    } else {
+      // 停止中なら再生する
+      // ループを設定
+		audio2.loop = true;
+      audio2.play();
     }
-
-    // 新しい playLoop を開始
-    isPlaying = true;
-    loopPromise = playLoop();
-
-    console.log("Added/Stopped:", url);
-}
-
-// ボタンがクリックされたときに play 関数を呼ぶ
-document.getElementById('b1').addEventListener('click', () => {
-    play('./music/ああああ.wav');
-});
-
-document.getElementById('b2').addEventListener('click', () => {
-    play('./music/test4秒.wav');
-});
-
-document.getElementById('b3').addEventListener('click', () => {
-    play('./music/test2.wav');
-});
-
-document.getElementById('b4').addEventListener('click', () => {
-    play('./music/test.wav');
-});
-
-document.getElementById('b5').addEventListener('click', () => {
-    play('./music/test3.wav');
-});
+    
+    // 状態を切り替える
+    isPlaying2 = !isPlaying2;
+  });
+  
+  // ボタンがクリックされたときの処理
+  playPauseButton3.addEventListener('click', function() {
+    if (isPlaying3) {
+      // 再生中なら停止する
+      audio3.pause();
+      audio3.currentTime = 0; // 再生位置を初期化
+    } else {
+      // 停止中なら再生する
+      // ループを設定
+		audio3.loop = true;
+      audio3.play();
+    }
+    
+    // 状態を切り替える
+    isPlaying3 = !isPlaying3;
+  });
+  
+  // ボタンがクリックされたときの処理
+  playPauseButton4.addEventListener('click', function() {
+    if (isPlaying4) {
+      // 再生中なら停止する
+      audio4.pause();
+      audio4.currentTime = 0; // 再生位置を初期化
+    } else {
+      // 停止中なら再生する
+      // ループを設定
+		audio4.loop = true;
+      audio4.play();
+    }
+    
+    // 状態を切り替える
+    isPlaying4 = !isPlaying4;
+  });
+  
+   // ボタンがクリックされたときの処理
+  playPauseButton5.addEventListener('click', function() {
+    if (isPlaying5) {
+      // 再生中なら停止する
+      audio5.pause();
+      audio5.currentTime = 0; // 再生位置を初期化
+    } else {
+      // 停止中なら再生する
+      // ループを設定
+		audio5.loop = true;
+      audio5.play();
+    }
+    
+    // 状態を切り替える
+    isPlaying5 = !isPlaying5;
+  });
