@@ -3,7 +3,7 @@
    // Audio要素を作成
   var audio2= new Audio('./music/test2.wav');
    // Audio要素を作成
-  var audio3 = new Audio('./music/test3.wav');
+  var audio3 = new Audio('./music/ああああ.wav');
    // Audio要素を作成
   var audio4 = new Audio('./music/test4.wav');
    // Audio要素を作成
