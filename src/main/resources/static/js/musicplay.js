@@ -21,10 +21,13 @@ var isPlaying2 = false;
 var b2Index = null;
 // 再生/停止の状態を判定する変数
 var isPlaying3 = false;
+var b3Index = null;
 // 再生/停止の状態を判定する変数
 var isPlaying4 = false;
+var b4Index = null;
 // 再生/停止の状態を判定する変数
 var isPlaying5 = false;
+var b5Index = null;
 
 var isPlaying = false;
 
@@ -65,6 +68,66 @@ playPauseButton2.addEventListener('click', function() {
 		play(b2Index);
 	}
 });
+// ボタンがクリックされたときの処理
+playPauseButton3.addEventListener('click', function() {
+	//選択している楽曲が再生されてなかったら再生
+	if (!isPlaying3) {
+		const temp = new Audio('./music/test2.wav');
+		temp.loop = true;
+		//配列にAudioを格納
+		audio.push(temp);
+		//添え字保存
+		b2Index = audio.length - 1;
+		isPlaying3 = !isPlaying3;
+		play();
+		//再生されていたら保存してた添え字を渡して削除
+	} else {
+		isPlaying3 = !isPlaying3;
+		play(b3Index);
+	}
+});
+// ボタンがクリックされたときの処理
+playPauseButton4.addEventListener('click', function() {
+	//選択している楽曲が再生されてなかったら再生
+	if (!isPlaying4) {
+		const temp = new Audio('./music/ああああ.wav');
+		temp.loop = true;
+		//配列にAudioを格納
+		audio.push(temp);
+		//添え字保存
+		b4Index = audio.length - 1;
+		isPlaying4 = !isPlaying4;
+		play();
+		//再生されていたら保存してた添え字を渡して削除
+	} else {
+		isPlaying4 = !isPlaying4;
+		play(b4Index);
+	}
+});
+// ボタンがクリックされたときの処理
+playPauseButton5.addEventListener('click', function() {
+	//選択している楽曲が再生されてなかったら再生
+	if (!isPlaying5) {
+		const temp = new Audio('./music/ああああ.wav');
+		temp.loop = true;
+		//配列にAudioを格納
+		audio.push(temp);
+		//添え字保存
+		b2Index = audio.length - 1;
+		isPlaying5 = !isPlaying5;
+		play();
+		//再生されていたら保存してた添え字を渡して削除
+	} else {
+		isPlaying5 = !isPlaying5;
+		play(b5Index);
+	}
+});
+
+
+
+
+
+
 function play(index) {
 	//添え字が渡されてないなら楽曲を再生する
 	if (index == null) {
