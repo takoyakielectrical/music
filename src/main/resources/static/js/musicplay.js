@@ -30,14 +30,18 @@ var isPlaying = false;
 
 // ボタンがクリックされたときの処理
 playPauseButton1.addEventListener('click', function() {
+	//選択している楽曲が再生されてなかったら再生
 	if (!isPlaying1) {
 		const temp = new Audio('./music/test.wav');
 		temp.loop = true;
+		//配列にAudioを格納
 		audio.push(temp);
 		console.log(audio);
+		//添え字保存
 		b1Index = audio.length - 1;
 		isPlaying1 = true;
 		play();
+		//再生されていたら保存してた添え字を渡して削除
 	} else {
 		isPlaying1 = false;
 		play(b1Index);
@@ -45,27 +49,33 @@ playPauseButton1.addEventListener('click', function() {
 });
 // ボタンがクリックされたときの処理
 playPauseButton2.addEventListener('click', function() {
+	//選択している楽曲が再生されてなかったら再生
 	if (!isPlaying2) {
 		const temp = new Audio('./music/ああああ.wav');
 		temp.loop = true;
+		//配列にAudioを格納
 		audio.push(temp);
+		//添え字保存
 		b2Index = audio.length - 1;
 		isPlaying2 = !isPlaying2;
 		play();
+		//再生されていたら保存してた添え字を渡して削除
 	} else {
 		isPlaying2 = !isPlaying2;
 		play(b2Index);
 	}
 });
 function play(index) {
+	//添え字が渡されてないなら楽曲を再生する
 	if (index == null) {
 		isPlaying = true;
 		for (var temp of audio) {
+			//すでに消した添え字のところ以外を再生
 			if (temp != null) {
 				temp.play();
 			}
 		}
-
+//添え字が渡された場合楽曲をリストから削除
 	} else {
 		audio[index].pause()
 		delete audio[index]
