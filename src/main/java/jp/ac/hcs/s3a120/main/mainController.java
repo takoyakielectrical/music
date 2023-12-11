@@ -14,4 +14,29 @@ public class mainController {
 	public String play() {
 		return "play";
 	}
+
+	@GetMapping("/select")
+	public String select() {
+		return "select";
+	}
+
+	@GetMapping("/bpm60")
+	public String bpm60() {
+		return "bpm60";
+	}
+
+	@GetMapping("/bpm100")
+	public String bpm100() {
+		return "bpm100";
+	}
+
+	@GetMapping("/bpm120")
+	public String bpm120() {
+		return "bpm120";
+	}
+
+	@GetMapping("/bpm135")
+	public String bpm135() {
+		return "bpm135";
+	}
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>BPM SELECT</title>
+</head>
+
+<body>
+	<header>
+		<h1>Music Maker(仮)</h1>
+	</header>
+	<h1>SELECT BPM</h1>
+	<input type="button" id="bpm60" value="bpm60" onclick="bpm60()">
+	<input type="button" id="bpm100" value="bpm100" onclick="bpm100()">
+	<input type="button" id="bpm120" value="bpm120" onclick="bpm120()">
+	<input type="button" id="bpm135" value="bpm135" onclick="bpm135()">
+	<input type="button" id="play" value="play" onclick="play()">
+
+	<script>
+		function bpm60() {
+			window.location.href = '/bpm60';
+		}
+		function bpm100() {
+			window.location.href = '/bpm100';
+		}
+		function bpm120() {
+			window.location.href = '/bpm120';
+		}
+		function bpm135() {
+			window.location.href = '/bpm135';
+		}
+		function play() {
+			window.location.href = '/play';
+		}
+
+	</script>
+	    <link rel="stylesheet" th:href="@{/select.css}" href="../static/select.css">
+</body>
+
+</html>
