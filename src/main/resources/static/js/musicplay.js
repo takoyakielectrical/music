@@ -1,5 +1,6 @@
 // Audio要素を作成
 var audio = [];
+const offset = 0.017;
 
 // ボタンの要素を取得
 var playPauseButton1 = document.getElementById('b1');
@@ -27,6 +28,7 @@ playPauseButton1.addEventListener('click', function() {
 	if (!isPlaying1) {
 		const temp = new Audio('./music/赤い人/赤い人1.wav');
 		temp.loop = true;
+		temp.preload = 'auto';
 		temp.addEventListener('loadedmetadata', function() {
 			synchronizePlayback();
 			isPlaying1 = true;
@@ -34,6 +36,11 @@ playPauseButton1.addEventListener('click', function() {
 			console.log(audio);
 			b1Index = audio.length - 1;
 			play();
+			setTimeout(() => {
+				console.log((temp.duration - offset) * 1000+"ミリ");
+				temp.play();
+				console.log("ok");
+			}, (temp.duration - offset) * 1000);
 		});
 	} else {
 		isPlaying1 = false;
@@ -45,12 +52,16 @@ playPauseButton2.addEventListener('click', function() {
 	if (!isPlaying2) {
 		const temp = new Audio('./music/赤い人/赤い人2.wav');
 		temp.loop = true;
+		temp.preload = 'auto';
 		temp.addEventListener('loadedmetadata', function() {
 			synchronizePlayback();
 			isPlaying2 = !isPlaying2;
 			audio.push(temp);
 			b2Index = audio.length - 1;
 			play();
+			setTimeout(() => {
+
+			}, (temp.duration - offset) * 1000);
 		});
 	} else {
 		isPlaying2 = !isPlaying2;
@@ -60,14 +71,18 @@ playPauseButton2.addEventListener('click', function() {
 
 playPauseButton3.addEventListener('click', function() {
 	if (!isPlaying3) {
-		const temp = new Audio('./music/test2.wav');
+		const temp = new Audio('./music/赤い人/赤い人3.wav');
 		temp.loop = true;
+		temp.preload = 'auto';
 		temp.addEventListener('loadedmetadata', function() {
 			synchronizePlayback();
 			isPlaying3 = !isPlaying3;
 			audio.push(temp);
 			b3Index = audio.length - 1;
 			play();
+			setTimeoutS(() => {
+				resolve();
+			}, (temp.duration - offset) * 1000);
 		});
 	} else {
 		isPlaying3 = !isPlaying3;
@@ -77,14 +92,18 @@ playPauseButton3.addEventListener('click', function() {
 
 playPauseButton4.addEventListener('click', function() {
 	if (!isPlaying4) {
-		const temp = new Audio('./music/ああああ.wav');
+		const temp = new Audio('./music/赤い人/赤い人4.wav');
 		temp.loop = true;
+		temp.preload = 'auto';
 		temp.addEventListener('loadedmetadata', function() {
 			synchronizePlayback();
 			isPlaying4 = !isPlaying4;
 			audio.push(temp);
 			b4Index = audio.length - 1;
 			play();
+			setTimeout(() => {
+				resolve();
+			}, (temp.duration - offset) * 1000);
 		});
 	} else {
 		isPlaying4 = !isPlaying4;
@@ -96,12 +115,16 @@ playPauseButton5.addEventListener('click', function() {
 	if (!isPlaying5) {
 		const temp = new Audio('./music/ああああ.wav');
 		temp.loop = true;
+		temp.preload = 'auto';
 		temp.addEventListener('loadedmetadata', function() {
 			synchronizePlayback();
 			isPlaying5 = !isPlaying5;
 			audio.push(temp);
 			b5Index = audio.length - 1;
 			play();
+			setTimeout(() => {
+				resolve();
+			}, (temp.duration - offset) * 1000);
 		});
 	} else {
 		isPlaying5 = !isPlaying5;
@@ -110,21 +133,30 @@ playPauseButton5.addEventListener('click', function() {
 });
 
 function synchronizePlayback() {
-	audio.forEach(function() {
-		audioElement =audio[ audio.length-1];
+		audioElement = audio[audio.length - 1];
 		console.log(audioElement);
-		if ( audioElement != null) {
+		if (audioElement != null) {
 			temp = 8 - audioElement.currentTime;
-			console.log(temp*1000);
-			wait(temp*1000);
+			console.log(temp * 1000);
+			wait(temp * 1000);
+		}else{
+			var temp2  = null;
+			for(var temp of audio){
+				if(temp!=null){
+					temp2 = temp;
+				}
+			}if(temp2!=null){
+				temp = 8 - temp2.currentTime;
+			console.log(temp * 1000);
+			wait(temp * 1000);
+			}
 		}
-	});
-}
+};
 function wait(waitMsec) {
-  var startMsec = new Date();
+	var startMsec = new Date();
 
-  // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-  while (new Date() - startMsec < waitMsec);
+	// 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+	while (new Date() - startMsec < waitMsec);
 }
 
 function play(index) {
