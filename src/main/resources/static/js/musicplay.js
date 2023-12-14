@@ -1,179 +1,115 @@
-// Audio要素を作成
-var audio = [];
-const offset = 0.017;
+let musics = [];
+let isPlaying = false;
+let loopPromise;
+let currentMusic;
+let found = false;//再生中の音楽
+let index = 0;//削除関係のindex
 
-// ボタンの要素を取得
-var playPauseButton1 = document.getElementById('b1');
-var playPauseButton2 = document.getElementById('b2');
-var playPauseButton3 = document.getElementById('b3');
-var playPauseButton4 = document.getElementById('b4');
-var playPauseButton5 = document.getElementById('b5');
+// 音楽ファイルをプリロードする関数
+function preloadMusic(url) {
+	return new Promise((resolve, reject) => {
+		let music = new Audio(url);
+		music.addEventListener('canplaythrough', () => resolve(music));
+		music.addEventListener('error', reject);
+	});
+}
 
-// 再生/停止の状態を判定する変数
-var isPlaying1 = false;
-var b1Index = null;
-var isPlaying2 = false;
-var b2Index = null;
-var isPlaying3 = false;
-var b3Index = null;
-var isPlaying4 = false;
-var b4Index = null;
-var isPlaying5 = false;
-var b5Index = null;
+async function playMusic(index) {
+	// musics 配列から指定されたインデックスの音楽を取得
+	const music = musics[index];
 
-var isPlaying = false;
+	// 現在の音楽を更新
+	currentMusic = music;
 
-// ボタンがクリックされたときの処理
-playPauseButton1.addEventListener('click', function() {
-	if (!isPlaying1) {
-		const temp = new Audio('./music/赤い人/赤い人1.wav');
-		temp.loop = true;
-		temp.preload = 'auto';
-		temp.addEventListener('loadedmetadata', function() {
-			synchronizePlayback();
-			isPlaying1 = true;
-			audio.push(temp);
-			console.log(audio);
-			b1Index = audio.length - 1;
-			play();
-			setTimeout(() => {
-				console.log((temp.duration - offset) * 1000+"ミリ");
-				temp.play();
-				console.log("ok");
-			}, (temp.duration - offset) * 1000);
+	// Promise を返す（この Promise は再生が終了するまで待機する役割を果たす）
+	return new Promise((resolve) => {
+		// 次の曲を開始するタイミングのオフセット（秒）
+		const offset = 0.015;
+
+		// 音楽が再生終了したときに解決するイベントリスナーを追加
+		music.addEventListener('ended', () => {
+			// Promise を解決して、再生が終了したことを通知
+			resolve();
 		});
-	} else {
-		isPlaying1 = false;
-		play(b1Index);
-	}
-});
 
-playPauseButton2.addEventListener('click', function() {
-	if (!isPlaying2) {
-		const temp = new Audio('./music/赤い人/赤い人2.wav');
-		temp.loop = true;
-		temp.preload = 'auto';
-		temp.addEventListener('loadedmetadata', function() {
-			synchronizePlayback();
-			isPlaying2 = !isPlaying2;
-			audio.push(temp);
-			b2Index = audio.length - 1;
-			play();
-			setTimeout(() => {
+		// 音楽の再生位置をリセット
+		music.currentTime = 0;
 
-			}, (temp.duration - offset) * 1000);
-		});
-	} else {
-		isPlaying2 = !isPlaying2;
-		play(b2Index);
-	}
-});
-
-playPauseButton3.addEventListener('click', function() {
-	if (!isPlaying3) {
-		const temp = new Audio('./music/赤い人/赤い人3.wav');
-		temp.loop = true;
-		temp.preload = 'auto';
-		temp.addEventListener('loadedmetadata', function() {
-			synchronizePlayback();
-			isPlaying3 = !isPlaying3;
-			audio.push(temp);
-			b3Index = audio.length - 1;
-			play();
-			setTimeoutS(() => {
+		// 音楽の再生を開始
+		music.play()
+			.then(() => {
+				// ここには再生が成功したときの処理を追加できます
+			})
+			.catch((error) => {
+				// エラーが発生した場合はコンソールにログを出力し、Promise を解決
+				console.error("Error playing music:", error);
 				resolve();
-			}, (temp.duration - offset) * 1000);
-		});
-	} else {
-		isPlaying3 = !isPlaying3;
-		play(b3Index);
-	}
-});
+			});
 
-playPauseButton4.addEventListener('click', function() {
-	if (!isPlaying4) {
-		const temp = new Audio('./music/赤い人/赤い人4.wav');
-		temp.loop = true;
-		temp.preload = 'auto';
-		temp.addEventListener('loadedmetadata', function() {
-			synchronizePlayback();
-			isPlaying4 = !isPlaying4;
-			audio.push(temp);
-			b4Index = audio.length - 1;
-			play();
-			setTimeout(() => {
-				resolve();
-			}, (temp.duration - offset) * 1000);
-		});
-	} else {
-		isPlaying4 = !isPlaying4;
-		play(b4Index);
-	}
-});
+		// 次の曲を開始するタイミングを設定
+		setTimeout(() => {
+			// Promise を解決して、次の曲の再生を開始
+			resolve();
+		}, (music.duration - offset) * 1000);
+	});
+}
 
-playPauseButton5.addEventListener('click', function() {
-	if (!isPlaying5) {
-		const temp = new Audio('./music/ああああ.wav');
-		temp.loop = true;
-		temp.preload = 'auto';
-		temp.addEventListener('loadedmetadata', function() {
-			synchronizePlayback();
-			isPlaying5 = !isPlaying5;
-			audio.push(temp);
-			b5Index = audio.length - 1;
-			play();
-			setTimeout(() => {
-				resolve();
-			}, (temp.duration - offset) * 1000);
-		});
-	} else {
-		isPlaying5 = !isPlaying5;
-		play(b5Index);
-	}
-});
 
-function synchronizePlayback() {
-		audioElement = audio[audio.length - 1];
-		console.log(audioElement);
-		if (audioElement != null) {
-			temp = 8 - audioElement.currentTime;
-			console.log(temp * 1000);
-			wait(temp * 1000);
-		}else{
-			var temp2  = null;
-			for(var temp of audio){
-				if(temp!=null){
-					temp2 = temp;
+// 音楽を無限に再生するループ
+async function playLoop() {
+	while (true) {
+		await Promise.all(musics.map((_, index) => playMusic(index)));
+	}
+}
+
+// 新しい音楽を追加し、再生を制御する関数
+async function play(url) {
+	console.log(url);
+	let fa = ("<audio preload=\"auto\" src=\"" + url + "\"></audio>");
+		if (index != 0) {
+			// 既に再生中の音楽を探す
+			for (i = 0; i < musics.length; i++) {
+				if (fa === musics[i].outerHTML) {
+					found = true;
+					index = i;
+					musics.splice(index, 1);
 				}
-			}if(temp2!=null){
-				temp = 8 - temp2.currentTime;
-			console.log(temp * 1000);
-			wait(temp * 1000);
 			}
 		}
-};
-function wait(waitMsec) {
-	var startMsec = new Date();
-
-	// 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-	while (new Date() - startMsec < waitMsec);
-}
-
-function play(index) {
-	if (index == null) {
-		isPlaying = true;
-		for (var temp of audio) {
-			if (temp != null) {
-				temp.play();
-			}
+	//音楽がなければ追加
+	if (!found) {
+		const music = new Audio(url);
+		console.log("success");
+		musics.push(music);
+		index += 1;
+	}
+	if (musics.length != 0) {
+		// 既に再生中でない場合のみ新しい playLoop を開始
+		if (!isPlaying) {
+			isPlaying = true;
+			loopPromise = playLoop();
+		} else {
+			// 既存の playLoop がある場合はそれが終わるまで待機してから新しい playLoop を開始
+			await loopPromise;
+			isPlaying = false;
+			loopPromise = playLoop();
 		}
-	} else {
-		audio[index].pause();
-		delete audio[index];
-		isPlaying = false;
 	}
 }
 
-
-
-
+// ボタンがクリックされたときに play 関数を呼ぶ
+document.getElementById('b1').addEventListener('click', () => {
+	play('./music/赤い人/赤い人1.wav');
+});
+document.getElementById('b2').addEventListener('click', () => {
+	play('./music/赤い人/赤い人2.wav');
+});
+document.getElementById('b3').addEventListener('click', () => {
+	play('./music/test2.wav');
+});
+document.getElementById('b4').addEventListener('click', () => {
+	play('./music/test.wav');
+});
+document.getElementById('b5').addEventListener('click', () => {
+	play('./music/test3.wav');
+});
