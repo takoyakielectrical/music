@@ -58,8 +58,7 @@ async function playMusic(index) {
 
 // 音楽を無限に再生するループ
 async function playLoop() {
-
-	while (deleted = false) {
+	while (deleted === false) {
 		console.log(deleted);
 		console.log("loop");
 		await Promise.all(musics.map(async (_, index) => {
@@ -71,6 +70,7 @@ async function playLoop() {
 		}));
 	}
 }
+
 
 
 // 新しい音楽を追加し、再生を制御する関数
@@ -101,7 +101,9 @@ async function play(url) {
 		musics.push(music);
 		index += 1;
 		deleted = false;
+		console.log("ここまでは来てる")
 	}
+	found = false;
 	if (musics.length != 0) {
 		// 既に再生中でない場合のみ新しい playLoop を開始
 		if (!isPlaying) {
