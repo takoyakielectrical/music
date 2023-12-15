@@ -4,6 +4,7 @@ let loopPromise;
 let currentMusic;
 let found = false;//再生中の音楽
 let index = 0;//削除関係のindex
+let deleted = false;
 
 // 音楽ファイルをプリロードする関数
 function preloadMusic(url) {
@@ -57,15 +58,26 @@ async function playMusic(index) {
 
 // 音楽を無限に再生するループ
 async function playLoop() {
-	while (true) {
-		await Promise.all(musics.map((_, index) => playMusic(index)));
+
+	while (deleted = false) {
+		console.log(deleted);
+		console.log("loop");
+		await Promise.all(musics.map(async (_, index) => {
+			try {
+				await playMusic(index);
+			} catch (error) {
+				console.error("Error during playMusic:", error);
+			}
+		}));
 	}
 }
+
 
 // 新しい音楽を追加し、再生を制御する関数
 async function play(url) {
 	console.log(url);
 	let fa = ("<audio preload=\"auto\" src=\"" + url + "\"></audio>");
+	if (musics != null) {
 		if (index != 0) {
 			// 既に再生中の音楽を探す
 			for (i = 0; i < musics.length; i++) {
@@ -73,15 +85,22 @@ async function play(url) {
 					found = true;
 					index = i;
 					musics.splice(index, 1);
+					if (musics.length == 0) {
+						deleted = true;
+						console.log("trueninatta");
+					}
+
 				}
 			}
 		}
+	}
 	//音楽がなければ追加
 	if (!found) {
 		const music = new Audio(url);
 		console.log("success");
 		musics.push(music);
 		index += 1;
+		deleted = false;
 	}
 	if (musics.length != 0) {
 		// 既に再生中でない場合のみ新しい playLoop を開始
