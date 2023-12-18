@@ -5,15 +5,10 @@ let currentMusic;
 let found = false;//再生中の音楽
 let index = 0;//削除関係のindex
 let deleted = false;
+let offset = 0;
+let first = true;
 
-// 音楽ファイルをプリロードする関数
-function preloadMusic(url) {
-	return new Promise((resolve, reject) => {
-		let music = new Audio(url);
-		music.addEventListener('canplaythrough', () => resolve(music));
-		music.addEventListener('error', reject);
-	});
-}
+
 
 async function playMusic(index) {
 	// musics 配列から指定されたインデックスの音楽を取得
@@ -25,7 +20,12 @@ async function playMusic(index) {
 	// Promise を返す（この Promise は再生が終了するまで待機する役割を果たす）
 	return new Promise((resolve) => {
 		// 次の曲を開始するタイミングのオフセット（秒）
-		const offset = 0.015;
+		if(first){
+			offset = 0.012;
+		}
+		else{
+			offset = 0.015;
+		}
 
 		// 音楽が再生終了したときに解決するイベントリスナーを追加
 		music.addEventListener('ended', () => {
@@ -39,7 +39,6 @@ async function playMusic(index) {
 		// 音楽の再生を開始
 		music.play()
 			.then(() => {
-				// ここには再生が成功したときの処理を追加できます
 			})
 			.catch((error) => {
 				// エラーが発生した場合はコンソールにログを出力し、Promise を解決
@@ -59,8 +58,6 @@ async function playMusic(index) {
 // 音楽を無限に再生するループ
 async function playLoop() {
 	while (deleted === false) {
-		console.log(deleted);
-		console.log("loop");
 		await Promise.all(musics.map(async (_, index) => {
 			try {
 				await playMusic(index);
@@ -75,11 +72,11 @@ async function playLoop() {
 
 // 新しい音楽を追加し、再生を制御する関数
 async function play(url) {
-	console.log(url);
 	let fa = ("<audio preload=\"auto\" src=\"" + url + "\"></audio>");
 	if (musics != null) {
 		if (index != 0) {
 			// 既に再生中の音楽を探す
+			first = false;
 			for (i = 0; i < musics.length; i++) {
 				if (fa === musics[i].outerHTML) {
 					found = true;
@@ -87,7 +84,6 @@ async function play(url) {
 					musics.splice(index, 1);
 					if (musics.length == 0) {
 						deleted = true;
-						console.log("trueninatta");
 					}
 
 				}
@@ -97,11 +93,9 @@ async function play(url) {
 	//音楽がなければ追加
 	if (!found) {
 		const music = new Audio(url);
-		console.log("success");
 		musics.push(music);
 		index += 1;
 		deleted = false;
-		console.log("ここまでは来てる")
 	}
 	found = false;
 	if (musics.length != 0) {

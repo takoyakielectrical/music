@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-<header>
-		<h1>Music Maker(仮)</h1>
-	</header>
-		    <link rel="stylesheet" th:href="@{/select.css}" href="../static/select.css">
+<head>
+    <meta charset="UTF-8">
+    <title>こんにちはタイトル</title>
+</head>
+
+<body>
+    <header>
+        <h1>Music Maker(仮)</h1>
+    </header>
+
+    <input type="button" id="b1" value="ボタン1">
+    <input type="button" id="b2" value="ボタン2">
+    <input type="button" id="b3" value="ボタン3">
+    <input type="button" id="b4" value="ボタン4">
+    <input type="button" id="b5" value="ボタン5">
+    <link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
+    <div id="slideshow-container">
+
+        <!-- 他の画像を追加する場合は、img要素を追加してください。 -->
+    </div>
+    <script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
+    <script th:src="@{../js/imgtrun.js}" src="../js/imgtrun.js"></script>
+    <img class="img" id="animationFrame" src="" alt="">
+
 
 </body>
 </html>
