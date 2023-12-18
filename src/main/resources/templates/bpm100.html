@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>Music Maker(仮)</h1>
+        <input type="button" id="back" onclick="remove()" value="back" class="btn btnback"></input>
     </header>
 
     <input type="button" id="b1" value="ボタン1">
@@ -18,11 +19,15 @@
     <input type="button" id="b5" value="ボタン5">
     <link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
     <div id="slideshow-container">
-
-        <!-- 他の画像を追加する場合は、img要素を追加してください。 -->
+		
     </div>
     <script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
     <script th:src="@{../js/imgtrun.js}" src="../js/imgtrun.js"></script>
+    <script>
+		function remove(){
+		window.location.href = '/select';
+		}
+	</script>	
     <img class="img" id="animationFrame" src="" alt="">
 
 
