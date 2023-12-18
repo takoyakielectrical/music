@@ -13,7 +13,7 @@ function showSlides() {
         slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-     slideInterval = setTimeout(showSlides, 100); //0.1秒ごとに画像を切り替える場合
+     slideInterval = setTimeout(showSlides, 1); //0.1秒ごとに画像を切り替える場合
 }
 function toggleSlideshow() {
     
