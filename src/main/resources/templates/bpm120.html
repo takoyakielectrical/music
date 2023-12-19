@@ -2,34 +2,53 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>こんにちはタイトル</title>
+	<meta charset="UTF-8">
+	<title>こんにちはタイトル</title>
 </head>
 
 <body>
-    <header>
-        <h1>Music Maker(仮)</h1>
-        <input type="button" id="back" onclick="remove()" value="back" class="btn btnback"></input>
-    </header>
+	<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
 
-    <input type="button" id="b1" value="ボタン1">
-    <input type="button" id="b2" value="ボタン2">
-    <input type="button" id="b3" value="ボタン3">
-    <input type="button" id="b4" value="ボタン4">
-    <input type="button" id="b5" value="ボタン5">
-    <link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
-    <div id="slideshow-container">
+	<header>
+		<h1>Music Maker(仮)</h1>
+		<input type="button" id="back" onclick="remove()" value="back" class="btn btnback"></input>
+	</header>
+	<div class="main">
+	
+		<div id="slideshow-container">
+	
+		</div>
 		
-    </div>
-    <script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
-    <script th:src="@{../js/imgtrun.js}" src="../js/imgtrun.js"></script>
-    <script>
-		function remove(){
-		window.location.href = '/select';
+	</div>
+	<footer>
+		<div class="btngroup">
+		<input type="button" id="red1" value="red1" class="btn btnmusic">
+		<input type="button" id="red2" value="red2" class="btn btnmusic">
+		<input type="button" id="red3" value="red3" class="btn btnmusic">
+		<input type="button" id="red4" value="red4" class="btn btnmusic">
+		<input type="button" id="blue1" value="blue1" class="btn btnmusic">
+		<input type="button" id="blue2" value="blue2" class="btn btnmusic">
+		<input type="button" id="blue3" value="blue3" class="btn btnmusic">
+		<input type="button" id="blue4" value="blue4" class="btn btnmusic">
+		<input type="button" id="blue5" value="blue5" class="btn btnmusic">
+		<input type="button" id="green1" value="green1" class="btn btnmusic">
+		<input type="button" id="green2" value="green2" class="btn btnmusic">
+		<input type="button" id="green3" value="green3" class="btn btnmusic">
+		<input type="button" id="green4" value="green4" class="btn btnmusic">
+		<input type="button" id="green5" value="green5" class="btn btnmusic">
+		</div>
+	</footer>
+	
+	<script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
+	<script th:src="@{../js/imgtrun.js}" src="../js/imgtrun.js"></script>
+	<script>
+		function remove() {
+			window.location.href = '/select';
 		}
-	</script>	
-    <img class="img" id="animationFrame" src="" alt="">
+	</script>
+	<img class="img" id="animationFrame" src="" alt="">
 
 
 </body>
+
 </html>

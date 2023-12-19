@@ -113,18 +113,45 @@ async function play(url) {
 }
 
 // ボタンがクリックされたときに play 関数を呼ぶ
-document.getElementById('b1').addEventListener('click', () => {
+document.getElementById('red1').addEventListener('click', () => {
 	play('./music/赤い人/赤い人1.wav');
 });
-document.getElementById('b2').addEventListener('click', () => {
+document.getElementById('red2').addEventListener('click', () => {
 	play('./music/赤い人/赤い人2.wav');
 });
-document.getElementById('b3').addEventListener('click', () => {
-	play('./music/test2.wav');
+document.getElementById('red3').addEventListener('click', () => {
+	play('./music/赤い人/赤い人3.wav');
 });
-document.getElementById('b4').addEventListener('click', () => {
-	play('./music/test.wav');
+document.getElementById('red4').addEventListener('click', () => {
+	play('./music/赤い人/赤い人4.wav');
 });
-document.getElementById('b5').addEventListener('click', () => {
-	play('./music/test3.wav');
+document.getElementById('blue1').addEventListener('click', () => {
+	play('./music/青い人/青い人1.wav');
+});
+document.getElementById('blue2').addEventListener('click', () => {
+	play('./music/青い人/青い人2.wav');
+});
+document.getElementById('blue3').addEventListener('click', () => {
+	play('./music/青い人/青い人3.wav');
+});
+document.getElementById('blue4').addEventListener('click', () => {
+	play('./music/青い人/青い人4.wav');
+});
+document.getElementById('blue5').addEventListener('click', () => {
+	play('./music/青い人/青い人5.wav');
+});
+document.getElementById('green1').addEventListener('click', () => {
+	play('./music/緑の人/緑の人1.wav');
+});
+document.getElementById('green2').addEventListener('click', () => {
+	play('./music/緑の人/緑の人2.wav');
+});
+document.getElementById('green3').addEventListener('click', () => {
+	play('./music/緑の人/緑の人3.wav');
+});
+document.getElementById('green4').addEventListener('click', () => {
+	play('./music/緑の人/緑の人4.wav');
+});
+document.getElementById('green5').addEventListener('click', () => {
+	play('./music/緑の人/緑の人5.wav');
 });
