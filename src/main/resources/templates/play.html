@@ -2,44 +2,49 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>こんにちはタイトル</title>
+	<meta charset="UTF-8">
+	<title>こんにちはタイトル</title>
 </head>
 
 <body>
-    <header>
-        <h1>Music Maker(仮)</h1>
-        <input type="button" id="back" onclick="remove()" value="back" class="btn btnback"></input>
-    </header>
-
-    <input type="button" id="b1" value="ボタン1">
-    <input type="button" id="b2" value="ボタン2">
-    <input type="button" id="b3" value="ボタン3">
-    <input type="button" id="b4" value="ボタン4">
-    <input type="button" id="b5" value="ボタン5">
-    <link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
-    <div id="slideshow-container">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん1.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん2.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん3.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん4.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん5.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん6.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん7.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん8.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん9.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん10.png}">
-		<img  class="mySlides" th:src="@{/img/のんちゃん/のんちゃん11.png}">
-    </div>
-    <script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
-    <script th:src="@{../js/imgtrun.js}" src="../js/imgtrun.js"></script>
-    <script>
-		function remove(){
-		window.location.href = '/select';
+	<header>
+		<input type="button" id="back" onclick="remove()" value="戻る" class="btn btnback"></input>
+		<h1>Music Maker(仮)</h1>
+	</header>
+	<div class="main">
+		<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
+		<div id="slideshow-container">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん1.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん2.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん3.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん4.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん5.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん6.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん7.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん8.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん9.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん10.png}">
+			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん11.png}">
+		</div>
+	</div>
+	<footer>
+		<div class="btnGroup">
+			<input type="button" id="b1" value="ボタン1">
+			<input type="button" id="b2" value="ボタン2">
+			<input type="button" id="b3" value="ボタン3">
+			<input type="button" id="b4" value="ボタン4">
+			<input type="button" id="b5" value="ボタン5">
+		</div>
+	</footer>
+	<script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
+	<script th:src="@{../js/imgtrun.js}" src="../js/imgtrun.js"></script>
+	<script>
+		function remove() {
+			window.location.href = '/select';
 		}
-	</script>	
-    <img class="img" id="animationFrame" src="" alt="">
+	</script>
 
 
 </body>
+
 </html>

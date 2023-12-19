@@ -13,27 +13,47 @@ header {
 	padding: 20px;
 	/* タイトル表示部の上下左右の余白 */
 	text-align: center;
+	display: flex;
+	
 }
 
-h1 {
+header h1 {
 	margin: 0;
+	text-align: center;
+	margin-left:38%;
 }
 
-
-#slideshow-container {
-	max-width: 500px;
-	position: relative;
-	margin: auto;
+.main{
+	width:100%;
+	display: block;
+	background-color: white;
 }
 
 img {
 	width: 180px;
 	height: 150px;
 }
-
-.mySlides {
-	display: none;
-	position: absolute;
+#slideshow-container{
 	width: 100%;
+}
+.mySlides {
+	margin:auto;
+	display: block;
+	width: 250px;
 	height: auto;
+}
+input{
+	border-radius: 15px;
+	background-color:white;
+	color: black;
+}
+.btnback{
+	width: 50px;
+	margin-top:10px;
+	height: 40px;
+	font-size: 15px;
+	border-color: gray;
+}
+.btnGroup{
+	text-align:center ;
 }
