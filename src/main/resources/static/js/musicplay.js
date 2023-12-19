@@ -20,17 +20,16 @@ async function playMusic(index) {
 	// Promise を返す（この Promise は再生が終了するまで待機する役割を果たす）
 	return new Promise((resolve) => {
 		// 次の曲を開始するタイミングのオフセット（秒）
-		if(first){
-			offset = 0.012;
+		if (first) {
+			offset = 0.015;
 		}
-		else{
+		else {
 			offset = 0.015;
 		}
 
 		// 音楽が再生終了したときに解決するイベントリスナーを追加
 		music.addEventListener('ended', () => {
 			// Promise を解決して、再生が終了したことを通知
-			toggleSlideshow()
 			resolve();
 		});
 
@@ -67,6 +66,7 @@ async function playLoop() {
 			}
 		}));
 	}
+	toggleSlideshow()
 }
 
 
@@ -131,6 +131,7 @@ function showSlides() {
 	}
 }
 function toggleSlideshow() {
+	console.log(slideshowPaused)
 	if (slideshowPaused) {
 		slideshowPaused = false;
 		showSlides();
@@ -142,10 +143,10 @@ function toggleSlideshow() {
 
 // ボタンがクリックされたときに play 関数を呼ぶ
 document.getElementById('red1').addEventListener('click', () => {
-	if(slideshowPaused){
+	play('./music/赤い人/赤い人1.wav');
+	if (slideshowPaused) {
 		toggleSlideshow()
 	}
-	play('./music/赤い人/赤い人1.wav');
 });
 document.getElementById('red2').addEventListener('click', () => {
 	play('./music/赤い人/赤い人2.wav');
