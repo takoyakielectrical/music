@@ -30,6 +30,7 @@ async function playMusic(index) {
 		// 音楽が再生終了したときに解決するイベントリスナーを追加
 		music.addEventListener('ended', () => {
 			// Promise を解決して、再生が終了したことを通知
+			toggleSlideshow()
 			resolve();
 		});
 
@@ -111,9 +112,39 @@ async function play(url) {
 		}
 	}
 }
+var slideIndex = 0;
+var slideshowPaused = true;
+showSlides()
+function showSlides() {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndex++;
+	if (slideIndex > slides.length) {
+		slideIndex = 1;
+	}
+	slides[slideIndex - 1].style.display = "block";
+	if (!slideshowPaused) {
+		slideInterval = setTimeout(showSlides, 70); //0.1秒ごとに画像を切り替える場合
+	}
+}
+function toggleSlideshow() {
+	if (slideshowPaused) {
+		slideshowPaused = false;
+		showSlides();
+	} else {
+		slideshowPaused = true;
+		clearTimeout(slideInterval);
+	}
+}
 
 // ボタンがクリックされたときに play 関数を呼ぶ
 document.getElementById('red1').addEventListener('click', () => {
+	if(slideshowPaused){
+		toggleSlideshow()
+	}
 	play('./music/赤い人/赤い人1.wav');
 });
 document.getElementById('red2').addEventListener('click', () => {
