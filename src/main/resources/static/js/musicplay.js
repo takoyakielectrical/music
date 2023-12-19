@@ -21,7 +21,7 @@ async function playMusic(index) {
 	return new Promise((resolve) => {
 		// 次の曲を開始するタイミングのオフセット（秒）
 		if (first) {
-			offset = 0.015;
+			offset = 0.0001;
 		}
 		else {
 			offset = 0.015;
@@ -81,8 +81,7 @@ async function play(url) {
 			for (i = 0; i < musics.length; i++) {
 				if (fa === musics[i].outerHTML) {
 					found = true;
-					index = i;
-					musics.splice(index, 1);
+					musics.splice(i, 1);
 					if (musics.length == 0) {
 						deleted = true;
 					}
