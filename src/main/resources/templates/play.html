@@ -1,81 +1,17 @@
 <!DOCTYPE html>
 <html>
-
+<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
 <head>
 	<meta charset="UTF-8">
 	<title>こんにちはタイトル</title>
 </head>
 
 <body>
-	<header>
-		<input type="button" id="back" onclick="remove()" value="戻る" class="btn btnback"></input>
-		<h1>Music Maker(仮)</h1>
-	</header>
-	<div class="main">
-		<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
-		<div id="slideshow-container">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん1.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん2.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん3.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん4.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん5.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん6.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん7.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん8.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん9.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん10.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん11.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん12.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん13.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん14.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん15.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん16.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん17.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん18.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん19.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん20.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん21.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん22.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん23.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん24.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん25.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん26.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん27.png}">
-		</div>
-		<div id="slideshow-container">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん1.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん2.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん3.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん4.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん5.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん6.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん7.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん8.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん9.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん10.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん11.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん12.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん13.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん14.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん15.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん16.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん17.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん18.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん19.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん20.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん21.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん22.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん23.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん24.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん25.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん26.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん27.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん28.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん29.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん30.png}">
-			<img class="mySlides" th:src="@{/img/ロアくん/ロアくん31.png}">
-		</div>
-	</div>
+	<!-- ヘッダー共通部分 -->
+	<div th:insert="~{com/_header}"></div>
+	<!-- コンサート会場共通部分 -->
+	<div th:insert="~{com/_b-img}"></div>
+	
 	<footer>
 		<div class="btngroup">
 			<input type="button" id="red1" value="ボタン1">
@@ -85,14 +21,9 @@
 			<input type="button" id="b5" value="ボタン5">
 		</div>
 	</footer>
-	<script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
-	<script>
-		function remove() {
-			window.location.href = '/select';
-		}
-	</script>
-
+	
+	<!-- script共通部分 -->
+	<div th:insert="~{com/_b-script}"></div>
 
 </body>
-
 </html>

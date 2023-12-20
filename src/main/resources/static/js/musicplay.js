@@ -66,7 +66,8 @@ async function playLoop() {
 			}
 		}));
 	}
-	toggleSlideshow()
+	toggleSlideshowNon()
+	toggleSlideshowRoa()
 }
 
 
@@ -111,31 +112,65 @@ async function play(url) {
 		}
 	}
 }
-var slideIndex = 0;
-var slideshowPaused = true;
-showSlides()
-function showSlides() {
+
+//のんちゃん動く用
+var slideIndexNon = 0;
+var slideshowPausedNon = true;
+showSlidesNon()
+
+function showSlidesNon() {
 	var i;
 	var slides = document.getElementsByClassName("mySlides");
 	for (i = 0; i < slides.length; i++) {
 		slides[i].style.display = "none";
 	}
-	slideIndex++;
-	if (slideIndex > slides.length) {
-		slideIndex = 1;
+	slideIndexNon++;
+	if (slideIndexNon > slides.length) {
+		slideIndexNon = 1;
 	}
-	slides[slideIndex - 1].style.display = "block";
-	if (!slideshowPaused) {
-		slideInterval = setTimeout(showSlides, 70); //0.1秒ごとに画像を切り替える場合
+	slides[slideIndexNon - 1].style.display = "block";
+	if (!slideshowPausedNon) {
+		slideInterval = setTimeout(showSlidesNon, 70); //0.7秒ごとに画像を切り替える場合
 	}
 }
-function toggleSlideshow() {
-	console.log(slideshowPaused)
-	if (slideshowPaused) {
-		slideshowPaused = false;
-		showSlides();
+function toggleSlideshowNon() {
+	console.log(slideshowPausedNon)
+	if (slideshowPausedNon) {
+		slideshowPausedNon = false;
+		showSlidesNon();
 	} else {
-		slideshowPaused = true;
+		slideshowPausedNon = true;
+		clearTimeout(slideInterval);
+	}
+}
+
+//ロアくん動く用
+var slideIndexRoa = 0;
+var slideshowPausedRoa = true;
+showSlidesRoa()
+
+function showSlidesRoa() {
+	var i;
+	var slides = document.getElementsByClassName("mySlides2");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndexRoa++;
+	if (slideIndexRoa > slides.length) {
+		slideIndexRoa = 1;
+	}
+	slides[slideIndexRoa - 1].style.display = "block";
+	if (!slideshowPausedRoa) {
+		slideInterval = setTimeout(showSlidesRoa, 70); //0.07秒ごとに画像を切り替える場合
+	}
+}
+function toggleSlideshowRoa() {
+	console.log(slideshowPausedRoa)
+	if (slideshowPausedRoa) {
+		slideshowPausedRoa = false;
+		showSlidesRoa();
+	} else {
+		slideshowPausedRoa = true;
 		clearTimeout(slideInterval);
 	}
 }
@@ -143,46 +178,127 @@ function toggleSlideshow() {
 // ボタンがクリックされたときに play 関数を呼ぶ
 document.getElementById('red1').addEventListener('click', () => {
 	play('./music/赤い人/赤い人1.wav');
-	if (slideshowPaused) {
-		toggleSlideshow()
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
 	}
 });
 document.getElementById('red2').addEventListener('click', () => {
 	play('./music/赤い人/赤い人2.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('red3').addEventListener('click', () => {
 	play('./music/赤い人/赤い人3.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('red4').addEventListener('click', () => {
 	play('./music/赤い人/赤い人4.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('blue1').addEventListener('click', () => {
 	play('./music/青い人/青い人1.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('blue2').addEventListener('click', () => {
 	play('./music/青い人/青い人2.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('blue3').addEventListener('click', () => {
 	play('./music/青い人/青い人3.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('blue4').addEventListener('click', () => {
 	play('./music/青い人/青い人4.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('blue5').addEventListener('click', () => {
 	play('./music/青い人/青い人5.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('green1').addEventListener('click', () => {
 	play('./music/緑の人/緑の人1.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('green2').addEventListener('click', () => {
 	play('./music/緑の人/緑の人2.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('green3').addEventListener('click', () => {
 	play('./music/緑の人/緑の人3.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('green4').addEventListener('click', () => {
 	play('./music/緑の人/緑の人4.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
 document.getElementById('green5').addEventListener('click', () => {
 	play('./music/緑の人/緑の人5.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
 });
