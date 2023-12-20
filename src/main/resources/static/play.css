@@ -28,16 +28,13 @@ header h1 {
 	width:100%;
 	display: block;
 	background-color: white;
-	opacity: 0;
 }
 
 img {
 	width: 180px;
 	height: 150px;
 }
-#slideshow-container{
-	width: 100%;
-}
+
 .mySlides {
 	margin:auto;
 	display: block;
@@ -179,4 +176,5 @@ body{
 }
 span{
 	font-family: cursive;
+	max-width: 130px;
 }

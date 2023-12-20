@@ -165,7 +165,7 @@ function showSlidesRoa() {
 	}
 }
 function toggleSlideshowRoa() {
-	console.log(slideshowPausedRoa)
+	console.log(slideshowPausedRoa);
 	if (slideshowPausedRoa) {
 		slideshowPausedRoa = false;
 		showSlidesRoa();
