@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
+
 <head>
 	<meta charset="UTF-8">
-	<title>こんにちはタイトル</title>
-</head>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>こんにちはタイトル</title>
+	</head>
 
 <body>
 	<!-- ヘッダー共通部分 -->
 	<div th:insert="~{com/_header}"></div>
 	<!-- コンサート会場共通部分 -->
 	<div th:insert="~{com/_b-img}"></div>
-	
+
 	<footer>
 		<div class="btngroup">
 			<input type="button" id="red1" value="ボタン1">
@@ -21,9 +26,10 @@
 			<input type="button" id="b5" value="ボタン5">
 		</div>
 	</footer>
-	
-	 <!-- script共通部分 -->
+
+	<!-- script共通部分 -->
 	<div th:insert="~{com/_b-script}"></div>
 
 </body>
+
 </html>
