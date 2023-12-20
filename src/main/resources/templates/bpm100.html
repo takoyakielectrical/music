@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html>
-
+<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
 <head>
     <meta charset="UTF-8">
     <title>こんにちはタイトル</title>
 </head>
 
 <body>
-    <header>
-        <h1>Music Maker(仮)</h1>
-        <input type="button" id="back" onclick="remove()" value="back" class="btn btnback"></input>
-    </header>
+    <!-- ヘッダー共通部分 -->
+	<div th:insert="~{com/_header}"></div>
+	<!-- コンサート会場共通部分 -->
+	<div th:insert="~{com/_b-img}"></div>
 
     <input type="button" id="b1" value="ボタン1">
     <input type="button" id="b2" value="ボタン2">
     <input type="button" id="b3" value="ボタン3">
     <input type="button" id="b4" value="ボタン4">
     <input type="button" id="b5" value="ボタン5">
-    <link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
     <div id="slideshow-container">
 		
     </div>
-    <script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
-    <script th:src="@{../js/imgtrun.js}" src="../js/imgtrun.js"></script>
-    <script>
-		function remove(){
-		window.location.href = '/select';
-		}
-	</script>	
-    <img class="img" id="animationFrame" src="" alt="">
-
+    
+    <!-- script共通部分 -->
+	<div th:insert="~{com/_b-script}"></div>
 
 </body>
 </html>
