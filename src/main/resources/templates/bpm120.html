@@ -9,23 +9,11 @@
 <body>
 	<link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
 
-	<header>
-		<input type="button" id="back" onclick="remove()" value="back" class="btn btn-back"></input>
-
-		<h1>Music Maker</h1>
-	</header>
+	<!-- ヘッダー共通部分 -->
+	<div th:insert="~{com/_header}"></div>
+	<!-- コンサート会場共通部分 -->
+	<div th:insert="~{com/_b-img}"></div>
 	
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん1.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん2.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん3.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん4.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん5.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん6.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん7.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん8.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん9.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん10.png}">
-			<img class="mySlides" th:src="@{/img/のんちゃん/のんちゃん11.png}">
 	<footer>
 		<div class="btn-group">
 			<a class="btn btn-border" id="red1"><span id="1">PUSH！</span></a>
@@ -46,14 +34,8 @@
 		</div>
 	</footer>
 
-	<script th:src="@{../js/musicplay.js}" src="../js/musicplay.js"></script>
-	<script th:src="@{../js/changeString.js}" src="../static/js/changeString.js"></script>
-
-	<script>
-		function remove() {
-			window.location.href = '/select';
-		}
-	</script>
+	<!-- script共通部分 -->
+	<div th:insert="~{com/_b-script}"></div>
 </body>
 
 </html>
