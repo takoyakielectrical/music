@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <head>
 	<meta charset="UTF-8">
 	<title>BPM SELECT</title>
 </head>
 
 <body>
-	<header>
+	<header class="bottom">
 		<h1>Music Maker(仮)</h1>
 	</header>
-	<h1>SELECT BPM</h1>
-	<input type="button" id="bpm60" value="bpm60" onclick="bpm60()">
-	<input type="button" id="bpm100" value="bpm100" onclick="bpm100()">
-	<input type="button" id="bpm120" value="sunrise" onclick="bpm120()">
-	<input type="button" id="bpm135" value="bpm135" onclick="bpm135()">
+	<div class="container">
+		<h1 class="bottom">SELECT BPM</h1>
+		<div class="flex bottom">
+			<button type="button" id="bpm60" class="hover-ticket" onclick="bpm60()"><img th:src="@{/img/ticket/ticket1.png}" /></button>
+			<button type="button" id="bpm100" class="hover-ticket" onclick="bpm100()"><img th:src="@{/img/ticket/ticket2.png}" /></button>
+		</div>
+		<div class="flex">
+			<button type="button" id="bpm120" class="hover-ticket" onclick="bpm120()"><img th:src="@{/img/ticket/ticket3.png}" /></button>
+			<button type="button" id="bpm135" class="hover-ticket" onclick="bpm135()"><img th:src="@{/img/ticket/ticket4.png}" /></button>
+		</div>
+	</div>
 	<input type="button" id="play" value="play" onclick="play()">
 
 	<script>
