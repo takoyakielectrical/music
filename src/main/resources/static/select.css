@@ -83,8 +83,9 @@ img {
 }
 .hover-ticket::after {
   color: #fff;
-  content: "Read More";
-  font-size: 22px;
+  content: "Attend a concert";
+  font-family:"Gabriola";
+  font-size: 60px;
   font-weight: bold;
   display: flex;
   text-align: center;
