@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <head>
 	<meta charset="UTF-8">
 	<title>BPM SELECT</title>
@@ -11,37 +12,50 @@
 		<h1>Music Maker(仮)</h1>
 	</header>
 	<div class="container">
-		<h1 class="bottom">SELECT BPM</h1>
+		<h1 class="bottom">SELECT TICKET</h1>
 		<div class="flex bottom">
-			<button type="button" id="bpm60" class="hover-ticket" onclick="bpm60()"><img th:src="@{/img/ticket/ticket1.png}" /></button>
-			<button type="button" id="bpm100" class="hover-ticket" onclick="bpm100()"><img th:src="@{/img/ticket/ticket2.png}" /></button>
+			<button type="button" id="bpm60" class="hover-ticket" onclick="bpm60()"><img
+					th:src="@{/img/ticket/Frame 16.png}" /></button>
+			<button type="button" id="bpm100" class="hover-ticket" onclick="bpm100()"><img
+					th:src="@{/img/ticket/ticket2.png}" /></button>
 		</div>
 		<div class="flex">
-			<button type="button" id="bpm120" class="hover-ticket" onclick="bpm120()"><img th:src="@{/img/ticket/ticket3.png}" /></button>
-			<button type="button" id="bpm135" class="hover-ticket" onclick="bpm135()"><img th:src="@{/img/ticket/ticket4.png}" /></button>
+			<button type="button" id="bpm120" class="hover-ticket" onclick="bpm120()"><img
+					th:src="@{/img/ticket/ticket3.png}" /></button>
+			<button type="button" id="bpm135" class="hover-ticket" onclick="bpm135()"><img
+					th:src="@{/img/ticket/ticket4.png}" /></button>
 		</div>
 	</div>
 	<input type="button" id="play" value="play" onclick="play()">
 
 	<script>
 		function bpm60() {
-			window.location.href = '/bpm60';
+			
+			setTimeout(function () {
+				window.location.href = '/bpm60';
+			}, 2 * 100);
 		}
 		function bpm100() {
-			window.location.href = '/bpm100';
+			setTimeout(function () {
+				window.location.href = '/bpm100';
+			}, 2 * 100);
 		}
 		function bpm120() {
-			window.location.href = '/bpm120';
+			setTimeout(function () {
+				window.location.href = '/bpm120';
+			}, 2 * 100);
 		}
 		function bpm135() {
-			window.location.href = '/bpm135';
+			setTimeout(function () {
+				window.location.href = '/bpm1350';
+			}, 2 * 100);
 		}
 		function play() {
 			window.location.href = '/play';
 		}
 
 	</script>
-	    <link rel="stylesheet" th:href="@{/select.css}" href="../static/select.css">
+	<link rel="stylesheet" th:href="@{/select.css}" href="../static/select.css">
 </body>
 
 </html>
