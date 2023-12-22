@@ -49,6 +49,14 @@ img {
 	margin-bottom: 30px;
 }
 
+.hiddenGIF {
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-45%);
+	width: 1000px;
+}
+
 /** チケットhoverの動き */
 .hover-ticket,
 .hover-ticket::before,
@@ -63,7 +71,6 @@ img {
 }
 .hover-ticket::before,
 .hover-ticket::after {
-  display: block;
   opacity: 0;
   position: absolute;
 }
@@ -71,15 +78,15 @@ img {
   z-index:0;
   position: absolute;
   content: '';
-  left: 21px;
-  top: 2px;
+  left: 0%;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0, .5);
   transition-duration: 0.5s;
   border-radius: 8px;
-  width: 594px;
-  height: 214px;
+  width: 615px;
+  height: 221px;
 }
 .hover-ticket::after {
   color: #fff;
