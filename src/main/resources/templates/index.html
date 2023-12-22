@@ -2,19 +2,17 @@
 	<html xmlns:th="http://www.thymeleaf.org">
 	
 	<!-- 共通領域 -->
-	
 	<head></head>
-	a
 	<body>
 		<link rel="stylesheet" th:href="@{/index.css}" href="../static/index.css">
 		<div class="container">
 	  <div class="content">
-	  	<h1 class= "child"> Title here</h1>
+	  	<img class="move" th:src="@{/img/logo.png}">
 	  </div>
 		<script>
 			setTimeout(function () {
 				window.location.href = '/select';
-			}, 2 * 1000);
+			}, 7.5 * 1000);
 			
 		</script>
 	</body>
