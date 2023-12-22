@@ -1,5 +1,5 @@
 body{
-	background-color: black;
+	background-color: white;
 }
 .container {
   display: flex;
@@ -15,4 +15,33 @@ body{
 .child {
   color: white;
   font-size: 80px;
+}
+
+/* ロゴ回す */
+/* ロゴ拡大 */
+img {
+  display:inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: white;
+}
+
+.move{
+  animation-name:rotation, expansion;
+  animation-duration:2s, 2s;
+  animation-iteration-count:3, 1;
+  animation-delay:0s, 6s;
+}
+
+@keyframes rotation {
+	0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
+  
+}
+
+@keyframes expansion {
+    0%{transform:scale(1.0);}
+   20%{transform:scale(0.7);}
+  100%{transform:scale(8.0);} 
 }
