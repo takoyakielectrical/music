@@ -106,9 +106,3 @@ img {
 .hover-ticket:hover::after {
   opacity: 1;
 }
-.hover-ticket:active{
-	position: absolute;
-	left:20%;
-	top:40%;
-	z-index: 100;
-}
