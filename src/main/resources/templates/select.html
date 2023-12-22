@@ -14,18 +14,19 @@
 	<div class="container">
 		<h1 class="bottom">SELECT TICKET</h1>
 		<div class="flex bottom">
-			<a><img th:src="@{/img/ticket/Frame 16.png}" class="hover-ticket" onclick="bpm60()" id="bpm60"></a>
+			<a><img th:src="@{/img/ticket/lightBlueTicket.png}" class="hover-ticket" onclick="bpm60()" id="bpm60"></a>
 
-			<a><img th:src="@{/img/ticket/Frame 16.png}" class="hover-ticket" onclick="bpm100()" id="bpm100"></a>
+			<a><img th:src="@{/img/ticket/greenTicket.png}" class="hover-ticket" onclick="bpm100()" id="bpm100"></a>
 		</div>
-		<img hidden th:src="@{/img/ticket/greenTicket.gif}" class="hiddenGIF" id="hidden1"></img>
-		<img hidden th:src="@{/img/ticket/ticket1.png}" class="hiddenGIF" id="hidden2"></img>
-		<img hidden th:src="@{/img/ticket/ticket1.png}" class="hiddenGIF" id="hidden3"></img>
-		<img hidden th:src="@{/img/ticket/ticket1.png}" class="hiddenGIF" id="hidden4"></img>
-		<div class="flex">
-			<a><img th:src="@{/img/ticket/Frame 16.png}" class="hover-ticket" onclick="bpm120()" id="bpm120"></a>
+		<img hidden th:src="@{/img/ticket/blue.gif}" class="hiddenGIF" id="hidden1"></img>
+		<img hidden th:src="@{/img/ticket/greenTicket.gif}" class="hiddenGIF" id="hidden2"></img>
+		<img hidden th:src="@{/img/ticket/darkblue.gif}" class="hiddenGIF" id="hidden3"></img>
+		<img hidden th:src="@{/img/ticket/red.gif}" class="hiddenGIF" id="hidden4"></img>
 
-			<a><img th:src="@{/img/ticket/Frame 16.png}" class="hover-ticket" onclick="bpm135()" id="bpm135"></a>
+		<div class="flex">
+			<a><img th:src="@{/img/ticket/blueTicket.png}" class="hover-ticket" onclick="bpm120()" id="bpm120"></a>
+
+			<a><img th:src="@{/img/ticket/redTicket.png}" class="hover-ticket" onclick="bpm135()" id="bpm135"></a>
 
 		</div>
 	</div>
@@ -40,10 +41,10 @@
 			var temp = document.getElementById("hidden1");
 			var temp2 = document.getElementById("bpm60");
 			temp2.style.opacity = 0;
-			ticket1.hidden=true;
-			ticket2.hidden=true;
-			ticket4.hidden=true;
-			ticket3.hidden=true;
+			ticket1.hidden = true;
+			ticket2.hidden = true;
+			ticket4.hidden = true;
+			ticket3.hidden = true;
 
 			temp.hidden = false;
 
@@ -52,25 +53,55 @@
 			}, 1.8 * 1000);
 		}
 		function bpm100() {
-			var temp = document.getElementById("hidden2")
+			var ticket1 = document.getElementById("bpm100");
+			var ticket2 = document.getElementById("bpm120");
+			var ticket3 = document.getElementById("bpm135");
+			var ticket4 = document.getElementById("bpm60");
+			var temp = document.getElementById("hidden2");
+			ticket1.style.opacity = 0;
+			ticket1.hidden = true;
+			ticket2.hidden = true;
+			ticket4.hidden = true;
+			ticket3.hidden = true;
+
 			temp.hidden = false;
 			setTimeout(function () {
 				window.location.href = '/bpm100';
-			}, 2 * 100);
+			}, 1.8 * 1000);
 		}
 		function bpm120() {
+			var ticket1 = document.getElementById("bpm100");
+			var ticket2 = document.getElementById("bpm120");
+			var ticket3 = document.getElementById("bpm135");
+			var ticket4 = document.getElementById("bpm60");
+			var temp = document.getElementById("hidden3");
+			ticket2.style.opacity = 0;
+			ticket1.hidden = true;
+			ticket2.hidden = true;
+			ticket4.hidden = true;
+			ticket3.hidden = true;
+
 			temp.hidden = false;
-			var temp = document.getElementById("hidden3")
 			setTimeout(function () {
 				window.location.href = '/bpm120';
-			}, 2 * 100);
+			}, 1.8 * 1000);
 		}
 		function bpm135() {
-			var temp = document.getElementById("hidden4")
+			var ticket1 = document.getElementById("bpm100");
+			var ticket2 = document.getElementById("bpm120");
+			var ticket3 = document.getElementById("bpm135");
+			var ticket4 = document.getElementById("bpm60");
+			var temp = document.getElementById("hidden4");
+			ticket3.style.opacity = 0;
+			ticket1.hidden = true;
+			ticket2.hidden = true;
+			ticket4.hidden = true;
+			ticket3.hidden = true;
+
 			temp.hidden = false;
 			setTimeout(function () {
 				window.location.href = '/bpm135';
-			}, 2 * 100);
+			}, 1.8 * 1000);
 		}
 		function play() {
 			window.location.href = '/play';

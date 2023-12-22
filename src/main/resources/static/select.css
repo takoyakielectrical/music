@@ -68,7 +68,7 @@ img {
   position: absolute;
 }
 .hover-ticket::before {
-  z-index: 0;
+  z-index:0;
   position: absolute;
   content: '';
   left: 21px;
