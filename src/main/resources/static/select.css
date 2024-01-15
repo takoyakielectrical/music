@@ -113,3 +113,13 @@ img {
 .hover-ticket:hover::after {
   opacity: 1;
 }
+
+/* フェードイン */
+.wrap {
+	animation: fadein 1s forwards;
+}
+
+@keyframes fadein {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
