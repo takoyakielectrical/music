@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" th:href="@{/play.css}" href="../static/play.css">
+<link rel="stylesheet" th:href="@{/bpm.css}" href="../static/bpm.css">
 <head>
     <meta charset="UTF-8">
     <title>こんにちはタイトル</title>
@@ -12,14 +13,30 @@
 	<!-- コンサート会場共通部分 -->
 	<div th:insert="~{com/_b-img}"></div>
     
-    <input type="button" id="b1" value="ボタン1">
-    <input type="button" id="b2" value="ボタン2">
-    <input type="button" id="b3" value="ボタン3">
-    <input type="button" id="b4" value="ボタン4">
-    <input type="button" id="b5" value="ボタン5">
-    
-    <!-- script共通部分 -->
-	<div th:insert="~{com/_b-script}"></div>
+    <div class="wrap">	
+		<footer>
+			<div class="btn-group">
+				<a class="btn btn-border" id="red1"><span id="1">PUSH！</span></a>
+				<a class="btn btn-border" id="red2"><span id="2">PUSH！</span></a>
+				<a class="btn btn-border" id="red3"><span id="3">PUSH！</span></a>
+				<a class="btn btn-border" id="red4"><span id="4">PUSH！</span></a>
+				<a class="btn btn-border" id="blue1"><span id="5">PUSH！</span></a>
+				<a class="btn btn-border" id="blue2"><span id="6">PUSH！</span></a>
+				<a class="btn btn-border" id="blue3"><span id="7">PUSH！</span></a>
+				<br>
+				<a class="btn btn-border" id="blue4"><span id="8">PUSH！</span></a>
+				<a class="btn btn-border" id="blue5"><span id="9">PUSH！</span></a>
+				<a class="btn btn-border" id="green1"><span id="10">PUSH！</span></a>
+				<a class="btn btn-border" id="green2"><span id="11">PUSH！</span></a>
+				<a class="btn btn-border" id="green3"><span id="12">PUSH！</span></a>
+				<a class="btn btn-border" id="green4"><span id="13">PUSH！</span></a>
+				<a class="btn btn-border" id="green5"><span id="14">PUSH！</span></a>
+			</div>
+		</footer>
+		<script th:src="@{../js/changeString.js}" src="../static/js/changeString.js"></script>
+		<!-- script共通部分 -->
+		<div th:insert="~{com/_b-script}"></div>
+	</div>
 
 </body>
 </html>
