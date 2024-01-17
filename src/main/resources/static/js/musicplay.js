@@ -67,7 +67,9 @@ async function playLoop() {
 		}));
 	}
 	toggleSlideshowNon()
+	console.info("ノンちゃん動いた")
 	toggleSlideshowRoa()
+	console.info("ロアくん動いた")
 }
 
 
