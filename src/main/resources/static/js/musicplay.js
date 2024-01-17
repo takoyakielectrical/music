@@ -176,6 +176,36 @@ function toggleSlideshowRoa() {
 		clearTimeout(slideInterval);
 	}
 }
+//顔動く用
+var slideIndexface = 0;
+var slideshowPausedface = true;
+showSlidesFace()
+
+function showSlidesFace() {
+	var i;
+	var slides = document.getElementsByClassName("myFaces");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndexface++;
+	if (slideIndexface > slides.length) {
+		slideIndexface = 1;
+	}
+	slides[slideIndexface - 1].style.display = "block";
+	if (!slideshowPausedface) {
+		slideInterval = setTimeout(showSlidesface, 100); //0.1秒ごとに画像を切り替える場合
+	}
+}
+function toggleSlideshowFace() {
+	console.log(slideshowPausedFace);
+	if (slideshowPausedface) {
+		slideshowPausedface = false;
+		showSlidesFace();
+	} else {
+		slideshowPausedface = true;
+		clearTimeout(slideInterval);
+	}
+}
 
 // ボタンがクリックされたときに play 関数を呼ぶ
 document.getElementById('red1').addEventListener('click', () => {
