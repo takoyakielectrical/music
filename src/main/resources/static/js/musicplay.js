@@ -67,9 +67,9 @@ async function playLoop() {
 		}));
 	}
 	toggleSlideshowNon()
-	console.info("ノンちゃん動いた")
 	toggleSlideshowRoa()
-	console.info("ロアくん動いた")
+	toggleSlideshowFace()
+	
 }
 
 
@@ -132,7 +132,7 @@ function showSlidesNon() {
 	}
 	slides[slideIndexNon - 1].style.display = "block";
 	if (!slideshowPausedNon) {
-		slideInterval = setTimeout(showSlidesNon, 70); //0.7秒ごとに画像を切り替える場合
+		slideIntervalNon = setTimeout(showSlidesNon, 70); //0.7秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowNon() {
@@ -142,7 +142,7 @@ function toggleSlideshowNon() {
 		showSlidesNon();
 	} else {
 		slideshowPausedNon = true;
-		clearTimeout(slideInterval);
+		clearTimeout(slideIntervalNon);
 	}
 }
 
@@ -163,7 +163,7 @@ function showSlidesRoa() {
 	}
 	slides[slideIndexRoa - 1].style.display = "block";
 	if (!slideshowPausedRoa) {
-		slideInterval = setTimeout(showSlidesRoa, 70); //0.07秒ごとに画像を切り替える場合
+		slideIntervalRoa = setTimeout(showSlidesRoa, 70); //0.07秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowRoa() {
@@ -173,7 +173,7 @@ function toggleSlideshowRoa() {
 		showSlidesRoa();
 	} else {
 		slideshowPausedRoa = true;
-		clearTimeout(slideInterval);
+		clearTimeout(slideIntervalRoa);
 	}
 }
 //顔動く用
@@ -193,7 +193,7 @@ function showSlidesFace() {
 	}
 	slides[slideIndexface - 1].style.display = "block";
 	if (!slideshowPausedface) {
-		slideInterval = setTimeout(showSlidesface, 100); //0.1秒ごとに画像を切り替える場合
+		slideIntervalFace = setTimeout(showSlidesface, 100); //0.1秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowFace() {
@@ -203,7 +203,7 @@ function toggleSlideshowFace() {
 		showSlidesFace();
 	} else {
 		slideshowPausedface = true;
-		clearTimeout(slideInterval);
+		clearTimeout(slideIntervalFace);
 	}
 }
 
