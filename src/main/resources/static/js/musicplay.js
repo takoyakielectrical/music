@@ -197,7 +197,6 @@ function showSlidesFace() {
 	}
 }
 function toggleSlideshowFace() {
-	console.log(slideshowPausedFace);
 	if (slideshowPausedface) {
 		slideshowPausedface = false;
 		showSlidesFace();
@@ -215,6 +214,9 @@ document.getElementById('red1').addEventListener('click', () => {
 	}
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
+	}
+	if (slideshowPausedface) {
+		toggleSlideshowFace();
 	}
 });
 document.getElementById('red2').addEventListener('click', () => {
