@@ -185,3 +185,12 @@ span{
 	font-family: cursive;
 	max-width: 130px;
 }
+.myPersons{
+	z-index: 5;
+	padding-top: 7%;
+}
+.myFaces{
+	position: relative;
+	margin-right:80%;
+	z-index: 10;
+}
