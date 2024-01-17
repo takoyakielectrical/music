@@ -193,7 +193,7 @@ function showSlidesFace() {
 	}
 	slides[slideIndexface - 1].style.display = "block";
 	if (!slideshowPausedface) {
-		slideIntervalFace = setTimeout(showSlidesface, 100); //0.1秒ごとに画像を切り替える場合
+		slideIntervalFace = setTimeout(showSlidesFace, 100); //0.1秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowFace() {
