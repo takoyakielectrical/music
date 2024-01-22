@@ -102,6 +102,18 @@ async function play(url) {
 					found = true;
 					musics.splice(i, 1);
 					singingCount -= 1;
+					if (singingCount == 1 && !slideshowPausedface3) {
+						toggleSlideshowFace3();
+					} else if (singingCount == 2 && !slideshowPausedface4) {
+						toggleSlideshowFace4();
+					} else if (singingCount == 3 && !slideshowPausedface2) {
+						toggleSlideshowFace2();
+					} else if (singingCount == 4 && !slideshowPausedface5) {
+						toggleSlideshowFace5();
+					} else if (singingCount == 5 && !slideshowPausedface) {
+						toggleSlideshowFace();
+					}
+
 					if (musics.length == 0) {
 						deleted = true;
 					}
@@ -327,7 +339,7 @@ function showSlidesFace5() {
 	}
 	slides[slideIndexface5 - 1].style.display = "block";
 	if (!slideshowPausedface5) {
-		slideIntervalFace5 = setTimeout(showSlidesFace, 100); //0.1秒ごとに画像を切り替える場合
+		slideIntervalFace5 = setTimeout(showSlidesFace5, 100); //0.1秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowFace5() {
@@ -359,7 +371,7 @@ document.getElementById('red1').addEventListener('click', () => {
 		toggleSlideshowFace2();
 	} else if (singingCount == 4 && slideshowPausedface5) {
 		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface1) {
+	} else if (singingCount == 5 && slideshowPausedface) {
 		toggleSlideshowFace();
 	}
 });
@@ -379,7 +391,7 @@ document.getElementById('red2').addEventListener('click', () => {
 		toggleSlideshowFace2();
 	} else if (singingCount == 4 && slideshowPausedface5) {
 		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface1) {
+	} else if (singingCount == 5 && slideshowPausedface) {
 		toggleSlideshowFace();
 	}
 });
@@ -399,7 +411,7 @@ document.getElementById('red3').addEventListener('click', () => {
 		toggleSlideshowFace2();
 	} else if (singingCount == 4 && slideshowPausedface5) {
 		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface1) {
+	} else if (singingCount == 5 && slideshowPausedface) {
 		toggleSlideshowFace();
 	}
 });
@@ -419,7 +431,7 @@ document.getElementById('red4').addEventListener('click', () => {
 		toggleSlideshowFace2();
 	} else if (singingCount == 4 && slideshowPausedface5) {
 		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface1) {
+	} else if (singingCount == 5 && slideshowPausedface) {
 		toggleSlideshowFace();
 	}
 });
@@ -439,7 +451,7 @@ document.getElementById('blue1').addEventListener('click', () => {
 		toggleSlideshowFace2();
 	} else if (singingCount == 4 && slideshowPausedface5) {
 		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface1) {
+	} else if (singingCount == 5 && slideshowPausedface) {
 		toggleSlideshowFace();
 	}
 });
