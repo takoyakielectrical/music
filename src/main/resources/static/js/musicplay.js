@@ -7,6 +7,7 @@ let index = 0;//削除関係のindex
 let deleted = false;
 let offset = 0;
 let first = true;
+let singingCount = 0;
 
 
 
@@ -68,8 +69,23 @@ async function playLoop() {
 	}
 	toggleSlideshowNon()
 	toggleSlideshowRoa()
-	toggleSlideshowFace()
-	
+
+	if (!slideshowPausedface) {
+		toggleSlideshowFace()
+	}
+	if (!slideshowPausedface2) {
+		toggleSlideshowFace2()
+	}
+	if (!slideshowPausedface3) {
+		toggleSlideshowFace3()
+	}
+	if (!slideshowPausedface4) {
+		toggleSlideshowFace4()
+	}
+	if (!slideshowPausedface5) {
+		toggleSlideshowFace5()
+	}
+
 }
 
 
@@ -85,6 +101,7 @@ async function play(url) {
 				if (fa === musics[i].outerHTML) {
 					found = true;
 					musics.splice(i, 1);
+					singingCount -= 1;
 					if (musics.length == 0) {
 						deleted = true;
 					}
@@ -99,6 +116,7 @@ async function play(url) {
 		musics.push(music);
 		index += 1;
 		deleted = false;
+		singingCount += 1;
 	}
 	found = false;
 	if (musics.length != 0) {
@@ -176,7 +194,7 @@ function toggleSlideshowRoa() {
 		clearTimeout(slideIntervalRoa);
 	}
 }
-//顔動く用
+//顔動く用1
 var slideIndexface = 0;
 var slideshowPausedface = true;
 showSlidesFace()
@@ -205,6 +223,123 @@ function toggleSlideshowFace() {
 		clearTimeout(slideIntervalFace);
 	}
 }
+//顔動く用2
+var slideIndexface2 = 0;
+var slideshowPausedface2 = true;
+showSlidesFace2()
+
+function showSlidesFace2() {
+	var i;
+	var slides = document.getElementsByClassName("myFaces2");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndexface2++;
+	if (slideIndexface2 > slides.length) {
+		slideIndexface2 = 1;
+	}
+	slides[slideIndexface2 - 1].style.display = "block";
+	if (!slideshowPausedface2) {
+		slideIntervalFace2 = setTimeout(showSlidesFace2, 100); //0.1秒ごとに画像を切り替える場合
+	}
+}
+function toggleSlideshowFace2() {
+	if (slideshowPausedface2) {
+		slideshowPausedface2 = false;
+		showSlidesFace2();
+	} else {
+		slideshowPausedface2 = true;
+		clearTimeout(slideIntervalFace2);
+	}
+}
+//顔動く用3
+var slideIndexface3 = 0;
+var slideshowPausedface3 = true;
+showSlidesFace3()
+
+function showSlidesFace3() {
+	var i;
+	var slides = document.getElementsByClassName("myFaces3");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndexface3++;
+	if (slideIndexface3 > slides.length) {
+		slideIndexface3 = 1;
+	}
+	slides[slideIndexface3 - 1].style.display = "block";
+	if (!slideshowPausedface3) {
+		slideIntervalFace3 = setTimeout(showSlidesFace3, 100); //0.1秒ごとに画像を切り替える場合
+	}
+}
+function toggleSlideshowFace3() {
+	if (slideshowPausedface3) {
+		slideshowPausedface3 = false;
+		showSlidesFace3();
+	} else {
+		slideshowPausedface3 = true;
+		clearTimeout(slideIntervalFace3);
+	}
+}
+//顔動く用4
+var slideIndexface4 = 0;
+var slideshowPausedface4 = true;
+showSlidesFace4()
+
+function showSlidesFace4() {
+	var i;
+	var slides = document.getElementsByClassName("myFaces4");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndexface4++;
+	if (slideIndexface4 > slides.length) {
+		slideIndexface4 = 1;
+	}
+	slides[slideIndexface4 - 1].style.display = "block";
+	if (!slideshowPausedface4) {
+		slideIntervalFace4 = setTimeout(showSlidesFace4, 100); //0.1秒ごとに画像を切り替える場合
+	}
+}
+function toggleSlideshowFace4() {
+	if (slideshowPausedface4) {
+		slideshowPausedface4 = false;
+		showSlidesFace4();
+	} else {
+		slideshowPausedface4 = true;
+		clearTimeout(slideIntervalFace4);
+	}
+}
+//顔動く用1
+var slideIndexface5 = 0;
+var slideshowPausedface5 = true;
+showSlidesFace5()
+
+function showSlidesFace5() {
+	var i;
+	var slides = document.getElementsByClassName("myFaces5");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slideIndexface5++;
+	if (slideIndexface5 > slides.length) {
+		slideIndexface5 = 1;
+	}
+	slides[slideIndexface5 - 1].style.display = "block";
+	if (!slideshowPausedface5) {
+		slideIntervalFace5 = setTimeout(showSlidesFace, 100); //0.1秒ごとに画像を切り替える場合
+	}
+}
+function toggleSlideshowFace5() {
+	if (slideshowPausedface5) {
+		slideshowPausedface5 = false;
+		showSlidesFace5();
+	} else {
+		slideshowPausedface5 = true;
+		clearTimeout(slideIntervalFace5);
+	}
+}
+
 
 // ボタンがクリックされたときに play 関数を呼ぶ
 document.getElementById('red1').addEventListener('click', () => {
@@ -215,7 +350,16 @@ document.getElementById('red1').addEventListener('click', () => {
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
 	}
-	if (slideshowPausedface) {
+
+	if (singingCount == 1 && slideshowPausedface3) {
+		toggleSlideshowFace3();
+	} else if (singingCount == 2 && slideshowPausedface4) {
+		toggleSlideshowFace4();
+	} else if (singingCount == 3 && slideshowPausedface2) {
+		toggleSlideshowFace2();
+	} else if (singingCount == 4 && slideshowPausedface5) {
+		toggleSlideshowFace5();
+	} else if (singingCount == 5 && slideshowPausedface1) {
 		toggleSlideshowFace();
 	}
 });
@@ -227,6 +371,17 @@ document.getElementById('red2').addEventListener('click', () => {
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
 	}
+	if (singingCount == 1 && slideshowPausedface3) {
+		toggleSlideshowFace3();
+	} else if (singingCount == 2 && slideshowPausedface4) {
+		toggleSlideshowFace4();
+	} else if (singingCount == 3 && slideshowPausedface2) {
+		toggleSlideshowFace2();
+	} else if (singingCount == 4 && slideshowPausedface5) {
+		toggleSlideshowFace5();
+	} else if (singingCount == 5 && slideshowPausedface1) {
+		toggleSlideshowFace();
+	}
 });
 document.getElementById('red3').addEventListener('click', () => {
 	play('./music/赤い人/赤い人3.wav');
@@ -235,6 +390,17 @@ document.getElementById('red3').addEventListener('click', () => {
 	}
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
+	}
+	if (singingCount == 1 && slideshowPausedface3) {
+		toggleSlideshowFace3();
+	} else if (singingCount == 2 && slideshowPausedface4) {
+		toggleSlideshowFace4();
+	} else if (singingCount == 3 && slideshowPausedface2) {
+		toggleSlideshowFace2();
+	} else if (singingCount == 4 && slideshowPausedface5) {
+		toggleSlideshowFace5();
+	} else if (singingCount == 5 && slideshowPausedface1) {
+		toggleSlideshowFace();
 	}
 });
 document.getElementById('red4').addEventListener('click', () => {
@@ -245,6 +411,17 @@ document.getElementById('red4').addEventListener('click', () => {
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
 	}
+	if (singingCount == 1 && slideshowPausedface3) {
+		toggleSlideshowFace3();
+	} else if (singingCount == 2 && slideshowPausedface4) {
+		toggleSlideshowFace4();
+	} else if (singingCount == 3 && slideshowPausedface2) {
+		toggleSlideshowFace2();
+	} else if (singingCount == 4 && slideshowPausedface5) {
+		toggleSlideshowFace5();
+	} else if (singingCount == 5 && slideshowPausedface1) {
+		toggleSlideshowFace();
+	}
 });
 document.getElementById('blue1').addEventListener('click', () => {
 	play('./music/青い人/青い人1.wav');
@@ -253,6 +430,17 @@ document.getElementById('blue1').addEventListener('click', () => {
 	}
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
+	}
+	if (singingCount == 1 && slideshowPausedface3) {
+		toggleSlideshowFace3();
+	} else if (singingCount == 2 && slideshowPausedface4) {
+		toggleSlideshowFace4();
+	} else if (singingCount == 3 && slideshowPausedface2) {
+		toggleSlideshowFace2();
+	} else if (singingCount == 4 && slideshowPausedface5) {
+		toggleSlideshowFace5();
+	} else if (singingCount == 5 && slideshowPausedface1) {
+		toggleSlideshowFace();
 	}
 });
 document.getElementById('blue2').addEventListener('click', () => {
