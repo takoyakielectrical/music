@@ -61,7 +61,35 @@ async function playLoop() {
 	while (deleted === false) {
 		await Promise.all(musics.map(async (_, index) => {
 			try {
+				if (!slideshowPausedface4 && singingCount <= 1) {
+					toggleSlideshowFace4()
+				}
+				if (!slideshowPausedface2 && singingCount <= 2) {
+					toggleSlideshowFace2()
+				} if (!slideshowPausedface5 && singingCount <= 3) {
+					toggleSlideshowFace5()
+				}
+				if (!slideshowPausedface && singingCount <= 4) {
+					toggleSlideshowFace()
+				}
+				if (singingCount >= 1 && slideshowPausedface3) {
+					toggleSlideshowFace3();
+				}
+				if (singingCount >= 2 && slideshowPausedface4) {
+					toggleSlideshowFace4();
+				}
+				if (singingCount >= 3 && slideshowPausedface2) {
+					toggleSlideshowFace2();
+				}
+				if (singingCount >= 4 && slideshowPausedface5) {
+					toggleSlideshowFace5();
+				}
+				if (singingCount >= 5 && slideshowPausedface) {
+					toggleSlideshowFace();
+				}
+
 				await playMusic(index);
+
 			} catch (error) {
 				console.error("Error during playMusic:", error);
 			}
@@ -102,17 +130,7 @@ async function play(url) {
 					found = true;
 					musics.splice(i, 1);
 					singingCount -= 1;
-					if (singingCount == 1 && !slideshowPausedface3) {
-						toggleSlideshowFace3();
-					} else if (singingCount == 2 && !slideshowPausedface4) {
-						toggleSlideshowFace4();
-					} else if (singingCount == 3 && !slideshowPausedface2) {
-						toggleSlideshowFace2();
-					} else if (singingCount == 4 && !slideshowPausedface5) {
-						toggleSlideshowFace5();
-					} else if (singingCount == 5 && !slideshowPausedface) {
-						toggleSlideshowFace();
-					}
+
 
 					if (musics.length == 0) {
 						deleted = true;
@@ -223,7 +241,7 @@ function showSlidesFace() {
 	}
 	slides[slideIndexface - 1].style.display = "block";
 	if (!slideshowPausedface) {
-		slideIntervalFace = setTimeout(showSlidesFace, 100); //0.1秒ごとに画像を切り替える場合
+		slideIntervalFace = setTimeout(showSlidesFace, 70); //0.1秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowFace() {
@@ -252,7 +270,7 @@ function showSlidesFace2() {
 	}
 	slides[slideIndexface2 - 1].style.display = "block";
 	if (!slideshowPausedface2) {
-		slideIntervalFace2 = setTimeout(showSlidesFace2, 100); //0.1秒ごとに画像を切り替える場合
+		slideIntervalFace2 = setTimeout(showSlidesFace2, 110); //0.1秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowFace2() {
@@ -310,7 +328,7 @@ function showSlidesFace4() {
 	}
 	slides[slideIndexface4 - 1].style.display = "block";
 	if (!slideshowPausedface4) {
-		slideIntervalFace4 = setTimeout(showSlidesFace4, 100); //0.1秒ごとに画像を切り替える場合
+		slideIntervalFace4 = setTimeout(showSlidesFace4, 150); //0.1秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowFace4() {
@@ -339,7 +357,7 @@ function showSlidesFace5() {
 	}
 	slides[slideIndexface5 - 1].style.display = "block";
 	if (!slideshowPausedface5) {
-		slideIntervalFace5 = setTimeout(showSlidesFace5, 100); //0.1秒ごとに画像を切り替える場合
+		slideIntervalFace5 = setTimeout(showSlidesFace5, 80); //0.1秒ごとに画像を切り替える場合
 	}
 }
 function toggleSlideshowFace5() {
@@ -363,17 +381,7 @@ document.getElementById('red1').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 
-	if (singingCount == 1 && slideshowPausedface3) {
-		toggleSlideshowFace3();
-	} else if (singingCount == 2 && slideshowPausedface4) {
-		toggleSlideshowFace4();
-	} else if (singingCount == 3 && slideshowPausedface2) {
-		toggleSlideshowFace2();
-	} else if (singingCount == 4 && slideshowPausedface5) {
-		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface) {
-		toggleSlideshowFace();
-	}
+
 });
 document.getElementById('red2').addEventListener('click', () => {
 	play('./music/赤い人/赤い人2.wav');
@@ -383,17 +391,7 @@ document.getElementById('red2').addEventListener('click', () => {
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
 	}
-	if (singingCount == 1 && slideshowPausedface3) {
-		toggleSlideshowFace3();
-	} else if (singingCount == 2 && slideshowPausedface4) {
-		toggleSlideshowFace4();
-	} else if (singingCount == 3 && slideshowPausedface2) {
-		toggleSlideshowFace2();
-	} else if (singingCount == 4 && slideshowPausedface5) {
-		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface) {
-		toggleSlideshowFace();
-	}
+	
 });
 document.getElementById('red3').addEventListener('click', () => {
 	play('./music/赤い人/赤い人3.wav');
@@ -403,17 +401,7 @@ document.getElementById('red3').addEventListener('click', () => {
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
 	}
-	if (singingCount == 1 && slideshowPausedface3) {
-		toggleSlideshowFace3();
-	} else if (singingCount == 2 && slideshowPausedface4) {
-		toggleSlideshowFace4();
-	} else if (singingCount == 3 && slideshowPausedface2) {
-		toggleSlideshowFace2();
-	} else if (singingCount == 4 && slideshowPausedface5) {
-		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface) {
-		toggleSlideshowFace();
-	}
+	
 });
 document.getElementById('red4').addEventListener('click', () => {
 	play('./music/赤い人/赤い人4.wav');
@@ -423,17 +411,7 @@ document.getElementById('red4').addEventListener('click', () => {
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
 	}
-	if (singingCount == 1 && slideshowPausedface3) {
-		toggleSlideshowFace3();
-	} else if (singingCount == 2 && slideshowPausedface4) {
-		toggleSlideshowFace4();
-	} else if (singingCount == 3 && slideshowPausedface2) {
-		toggleSlideshowFace2();
-	} else if (singingCount == 4 && slideshowPausedface5) {
-		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface) {
-		toggleSlideshowFace();
-	}
+	
 });
 document.getElementById('blue1').addEventListener('click', () => {
 	play('./music/青い人/青い人1.wav');
@@ -443,17 +421,7 @@ document.getElementById('blue1').addEventListener('click', () => {
 	if (slideshowPausedRoa) {
 		toggleSlideshowRoa();
 	}
-	if (singingCount == 1 && slideshowPausedface3) {
-		toggleSlideshowFace3();
-	} else if (singingCount == 2 && slideshowPausedface4) {
-		toggleSlideshowFace4();
-	} else if (singingCount == 3 && slideshowPausedface2) {
-		toggleSlideshowFace2();
-	} else if (singingCount == 4 && slideshowPausedface5) {
-		toggleSlideshowFace5();
-	} else if (singingCount == 5 && slideshowPausedface) {
-		toggleSlideshowFace();
-	}
+
 });
 document.getElementById('blue2').addEventListener('click', () => {
 	play('./music/青い人/青い人2.wav');
