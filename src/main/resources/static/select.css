@@ -12,9 +12,10 @@ header {
 }
 
 h1 {
-    margin: 0;
+    margin-left: 40%;
     font-family:"Gabriola";
     font-weight: bold;
+    font-size: 70px;
 }
 .img{
 	height: 500px;
