@@ -1,7 +1,27 @@
+header {
+	display: flex;
+	background-color: #212529;
+}
+
+header h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 3vw	;
+	font-family: fantasy;
+	color:white;
+}
+
 .person{
 	width: 500px;
 }
 .soundmix{
 	font-family:Georgia, 'Times New Roman', Times, serif;
-	margin-left:30%;
+	margin-left: 37%;
+}
+
+.btn-back{
+	height: 2.5em;
+	margin: 10px 0 10px 10px;
+	font-family: cursive;
+	border-radius: 0.5rem;
 }
