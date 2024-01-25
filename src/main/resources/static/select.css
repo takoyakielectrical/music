@@ -12,10 +12,9 @@ header {
 }
 
 h1 {
-    margin-left: 40%;
+    margin: 0;
     font-family:"Gabriola";
     font-weight: bold;
-    font-size: 70px;
 }
 .img{
 	height: 500px;
@@ -40,6 +39,10 @@ img {
 	margin-bottom: 30px;
 }
 
+h1.bottom{
+	font-size: 70px;
+	margin-left:35%;
+}
 .hiddenGIF {
 	display: inline-block;
 	position: relative;
@@ -116,6 +119,6 @@ img {
 }
 body{
 	background-image: url(./img/ticket/background.png);
-	background-size: 100% 130%;
+	background-size: 100% 110%;
 	background-repeat:  no-repeat;
 }
