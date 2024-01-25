@@ -20,18 +20,6 @@ h1 {
 	height: 500px;
 	width: 500px;
 }
-#slideshow-container {
-    max-width: 500px;
-    position: relative;
-    margin: auto;
-}
-
-.mySlides {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: auto;
-}
 
 /** チケットの位置サイズ */
 button {
@@ -87,8 +75,8 @@ img {
   background-color: rgba(0,0,0, .5);
   transition-duration: 0.5s;
   border-radius: 8px;
-  width: 615px;
-  height: 221px;
+  width: 615.7px;
+  height: 223px;
 }
 .hover-ticket::after {
   color: #fff;
