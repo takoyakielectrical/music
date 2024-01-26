@@ -372,7 +372,7 @@ function toggleSlideshowFace5() {
 
 
 // ボタンがクリックされたときに play 関数を呼ぶ
-document.getElementById('red1').addEventListener('click', () => {
+document.getElementById('square1').addEventListener('click', () => {
 	play('./music/赤い人/赤い人1.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -383,7 +383,7 @@ document.getElementById('red1').addEventListener('click', () => {
 
 
 });
-document.getElementById('red2').addEventListener('click', () => {
+document.getElementById('square2').addEventListener('click', () => {
 	play('./music/赤い人/赤い人2.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -393,7 +393,7 @@ document.getElementById('red2').addEventListener('click', () => {
 	}
 	
 });
-document.getElementById('red3').addEventListener('click', () => {
+document.getElementById('square3').addEventListener('click', () => {
 	play('./music/赤い人/赤い人3.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -403,7 +403,7 @@ document.getElementById('red3').addEventListener('click', () => {
 	}
 	
 });
-document.getElementById('red4').addEventListener('click', () => {
+document.getElementById('square4').addEventListener('click', () => {
 	play('./music/赤い人/赤い人4.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -413,7 +413,7 @@ document.getElementById('red4').addEventListener('click', () => {
 	}
 	
 });
-document.getElementById('blue1').addEventListener('click', () => {
+document.getElementById('square5').addEventListener('click', () => {
 	play('./music/青い人/青い人1.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -423,7 +423,7 @@ document.getElementById('blue1').addEventListener('click', () => {
 	}
 
 });
-document.getElementById('blue2').addEventListener('click', () => {
+document.getElementById('percent1').addEventListener('click', () => {
 	play('./music/青い人/青い人2.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -432,7 +432,7 @@ document.getElementById('blue2').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('blue3').addEventListener('click', () => {
+document.getElementById('percent2').addEventListener('click', () => {
 	play('./music/青い人/青い人3.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -441,7 +441,7 @@ document.getElementById('blue3').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('blue4').addEventListener('click', () => {
+document.getElementById('percent3').addEventListener('click', () => {
 	play('./music/青い人/青い人4.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -450,7 +450,7 @@ document.getElementById('blue4').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('blue5').addEventListener('click', () => {
+document.getElementById('clover1').addEventListener('click', () => {
 	play('./music/青い人/青い人5.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -459,7 +459,7 @@ document.getElementById('blue5').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('green1').addEventListener('click', () => {
+document.getElementById('clover2').addEventListener('click', () => {
 	play('./music/緑の人/緑の人1.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -468,7 +468,7 @@ document.getElementById('green1').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('green2').addEventListener('click', () => {
+document.getElementById('clover3').addEventListener('click', () => {
 	play('./music/緑の人/緑の人2.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -477,7 +477,7 @@ document.getElementById('green2').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('green3').addEventListener('click', () => {
+document.getElementById('clover4').addEventListener('click', () => {
 	play('./music/緑の人/緑の人3.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -486,7 +486,7 @@ document.getElementById('green3').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('green4').addEventListener('click', () => {
+document.getElementById('clover5').addEventListener('click', () => {
 	play('./music/緑の人/緑の人4.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -495,7 +495,7 @@ document.getElementById('green4').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-document.getElementById('green5').addEventListener('click', () => {
+document.getElementById('doublecircle1').addEventListener('click', () => {
 	play('./music/緑の人/緑の人5.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
@@ -504,4 +504,48 @@ document.getElementById('green5').addEventListener('click', () => {
 		toggleSlideshowRoa();
 	}
 });
-
+document.getElementById('doublecircle1').addEventListener('click', () => {
+	play('./music/緑の人/緑の人5.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
+document.getElementById('doublecircle2').addEventListener('click', () => {
+	play('./music/緑の人/緑の人5.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
+document.getElementById('doublecircle3').addEventListener('click', () => {
+	play('./music/緑の人/緑の人5.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
+document.getElementById('doublecircle4').addEventListener('click', () => {
+	play('./music/緑の人/緑の人5.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
+document.getElementById('doublecircle5').addEventListener('click', () => {
+	play('./music/緑の人/緑の人5.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
