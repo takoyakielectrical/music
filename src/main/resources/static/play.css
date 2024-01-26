@@ -62,6 +62,101 @@ span{
 
 /** red ticket */
 /** ボタン配置(左) */
+#square1 {
+	margin-top: -29%;
+	margin-left: 2.5%;
+}
+
+#square2 {
+	margin-top: -32%;
+	margin-left: 12%;
+}
+
+#square3 {
+	margin-top: -24.5%;
+	margin-left: 8.5%;
+}
+
+#square4 {
+	margin-top: -19%;
+	margin-left: 2%;
+}
+
+#square5{
+	margin-top: -35%;
+	margin-left: 21.5%;
+}
+
+#percent1{
+	margin-top: -27.5%;
+	margin-left: 19%;
+}
+
+#percent2{
+	margin-top: -20%;
+	margin-left: 15%;
+	
+}
+
+#percent3{
+	margin-top: -14%;
+	margin-left: 9%;
+	
+}
+
+#clover1{
+	margin-top: -10%;
+	margin-left: 2%;
+}
+
+/** ボタン配置(右) */
+#clover2{
+	margin-top: -35%;
+	margin-left: 74%;
+}
+
+#clover3 {
+	margin-top: -27.5%;
+	margin-left: 77%;
+}
+
+#clover4 {
+	margin-top: -20%;
+	margin-left: 81%;
+}
+
+#clover5 {
+	margin-top: -14%;
+	margin-left: 86%;
+}
+
+#doublecircle1 {
+	margin-top: -10%;
+	margin-left: 93%;
+}
+
+#doublecircle2 {
+	margin-top: -32%;
+	margin-left: 84%;
+}
+
+#doublecircle3 {
+	margin-top: -24.5%;
+	margin-left: 88%;
+}
+
+#doublecircle4 {
+	margin-top: -19%;
+	margin-left: 94%;
+}
+
+#doublecircle5 {
+	margin-top: -29%;
+	margin-left: 94%;
+}
+
+/** new white ticket */
+/** ボタン配置(左) */
 #red1 {
 	margin-top: -32%;
 	margin-left: 12%;
@@ -132,5 +227,3 @@ span{
 	margin-top: -18%;
 	margin-left: 94%;
 }
-
-/** new white ticket */
