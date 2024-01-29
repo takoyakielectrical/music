@@ -424,7 +424,7 @@ document.getElementById('moon3').addEventListener('click', () => {
 
 });
 document.getElementById('traiangle1').addEventListener('click', () => {
-	play('./music/BPM100_Bgroup/Bgroup1.wav');
+	play('./music/BPM90_3/BPM90_3-1.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
@@ -433,7 +433,7 @@ document.getElementById('traiangle1').addEventListener('click', () => {
 	}
 });
 document.getElementById('traiangle2').addEventListener('click', () => {
-	play('./music/BPM100_Bgroup/Bgroup2.wav');
+	play('./music/BPM90_3/BPM90_3-2.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
@@ -442,7 +442,7 @@ document.getElementById('traiangle2').addEventListener('click', () => {
 	}
 });
 document.getElementById('traiangle3').addEventListener('click', () => {
-	play('./music/BPM100_Bgroup/Bgroup3.wav');
+	play('./music/BPM90_3/BPM90_3-3.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
@@ -451,7 +451,7 @@ document.getElementById('traiangle3').addEventListener('click', () => {
 	}
 });
 document.getElementById('beans1').addEventListener('click', () => {
-	play('./music/BPM100_Cgroup/Cgroup1.wav');
+	play('./music/BPM90_3/BPM90_3-4.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
@@ -460,7 +460,7 @@ document.getElementById('beans1').addEventListener('click', () => {
 	}
 });
 document.getElementById('beans2').addEventListener('click', () => {
-	play('./music/BPM100_Cgroup/Cgroup2.wav');
+	play('./music/BPM90_3/BPM90_3-5.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
