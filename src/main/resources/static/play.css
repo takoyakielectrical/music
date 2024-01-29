@@ -57,8 +57,125 @@ span{
 }
 
 /** black ticket */
+/** ボタン配置(左) */
+#yellow2_1 {
+	margin-top: -31%;
+	margin-left: 10.5%;
+}
+
+#yellow2_2 {
+	margin-top: -23%;
+	margin-left: 4.5%;
+}
+
+#yellow2_3 {
+	margin-top: -34%;
+	margin-left: 20%;
+}
+
+#yellow2_4 {
+	margin-top: -26%;
+	margin-left: 17%;
+}
+
+#yellow2_5{
+	margin-top: -19%;
+	margin-left: 12%;
+}
+
+#blue2_1{
+	margin-top: -13%;
+	margin-left: 5%;
+}
+
+/** ボタン配置(右) */
+#blue2_2{
+	margin-top: -34%;
+	margin-left: 76%;
+}
+
+#blue2_3 {
+	margin-top: -26%;
+	margin-left: 79%;
+}
+
+#blue2_4 {
+	margin-top: -19%;
+	margin-left: 84%;
+}
+
+#blue2_5 {
+	margin-top: -13%;
+	margin-left: 91%;
+}
+
+#red2_1 {
+	margin-top: -32%;
+	margin-left: 84%;
+}
+
+#red2_2 {
+	margin-top: -26.5%;
+	margin-left: 88%;
+}
+
+#red2_3 {
+	margin-top: -21%;
+	margin-left: 92.5%;
+}
 
 /** blue ticket */
+/** ボタン配置(左) */
+#egroup1 {
+	margin-top: -32%;
+	margin-left: 10%;
+}
+
+#egroup2 {
+	margin-top: -24%;
+	margin-left: 5%;
+}
+
+#moon1 {
+	margin-top: -33%;
+	margin-left: 20%;
+}
+
+#moon2 {
+	margin-top: -23%;
+	margin-left: 15%;
+}
+
+#moon3{
+	margin-top: -15%;
+	margin-left: 5%;
+}
+
+/** ボタン配置(右) */
+#traiangle1{
+	margin-top: -33%;
+	margin-left: 76%;
+}
+
+#traiangle2 {
+	margin-top: -23%;
+	margin-left: 81%;
+}
+
+#traiangle3 {
+	margin-top: -15%;
+	margin-left: 90%;
+}
+
+#beans1 {
+	margin-top: -32%;
+	margin-left: 86%;
+}
+
+#beans2 {
+	margin-top: -24%;
+	margin-left: 91%;
+}
 
 /** red ticket */
 /** ボタン配置(左) */
