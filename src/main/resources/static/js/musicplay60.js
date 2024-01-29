@@ -469,4 +469,34 @@ document.getElementById('blue2_5').addEventListener('click', () => {
 	}
 });
 
+document.getElementById('red2_1').addEventListener('click', () => {
+	play('./music/BPM60_赤/BPM60_赤1.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
+
+document.getElementById('red2_2').addEventListener('click', () => {
+	play('./music/BPM60_赤/BPM60_赤2.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
+
+document.getElementById('red2_3').addEventListener('click', () => {
+	play('./music/BPM60_赤/BPM60_赤3.wav');
+	if (slideshowPausedNon) {
+		toggleSlideshowNon();
+	}
+	if (slideshowPausedRoa) {
+		toggleSlideshowRoa();
+	}
+});
+
 
