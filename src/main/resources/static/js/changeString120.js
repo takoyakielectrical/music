@@ -126,7 +126,7 @@ document.getElementById('percent2').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('percent3').addEventListener('click', () => {
+document.getElementById('clover1').addEventListener('click', () => {
 	var inputElement = document.getElementById('8');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -144,7 +144,7 @@ document.getElementById('percent3').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('clover1').addEventListener('click', () => {
+document.getElementById('clover2').addEventListener('click', () => {
 	var inputElement = document.getElementById('9');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -162,7 +162,7 @@ document.getElementById('clover1').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('clover2').addEventListener('click', () => {
+document.getElementById('clover3').addEventListener('click', () => {
 	var inputElement = document.getElementById('10');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -180,7 +180,7 @@ document.getElementById('clover2').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('clover3').addEventListener('click', () => {
+document.getElementById('clover4').addEventListener('click', () => {
 	var inputElement = document.getElementById('11');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -198,7 +198,7 @@ document.getElementById('clover3').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('clover4').addEventListener('click', () => {
+document.getElementById('clover5').addEventListener('click', () => {
 	var inputElement = document.getElementById('12');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -216,7 +216,7 @@ document.getElementById('clover4').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('clover5').addEventListener('click', () => {
+document.getElementById('doublecircle1').addEventListener('click', () => {
 	var inputElement = document.getElementById('13');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -234,7 +234,7 @@ document.getElementById('clover5').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('doublecircle1').addEventListener('click', () => {
+document.getElementById('doublecircle2').addEventListener('click', () => {
 	var inputElement = document.getElementById('14');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -252,7 +252,7 @@ document.getElementById('doublecircle1').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('doublecircle2').addEventListener('click', () => {
+document.getElementById('doublecircle3').addEventListener('click', () => {
 	var inputElement = document.getElementById('15');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -270,7 +270,7 @@ document.getElementById('doublecircle2').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('doublecircle3').addEventListener('click', () => {
+document.getElementById('doublecircle4').addEventListener('click', () => {
 	var inputElement = document.getElementById('16');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -288,26 +288,8 @@ document.getElementById('doublecircle3').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('doublecircle4').addEventListener('click', () => {
-	var inputElement = document.getElementById('17');
-	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
-		inputElement.src = '/img/light/bright.png';
-		inputElement.style.height = '80px';
-		inputElement.style.width = '80px';
-		inputElement.style.marginTop = '-12.8px';
-		inputElement.style.marginLeft = '-7px';
-		
-	}else{
-		inputElement.src = '/img/light/dark.png';
-		inputElement.style.height = '60px';
-		inputElement.style.width = '60px';
-		inputElement.style.marginTop = '0';
-		inputElement.style.marginLeft = '0';
-	}
-});
-
 document.getElementById('doublecircle5').addEventListener('click', () => {
-	var inputElement = document.getElementById('18');
+	var inputElement = document.getElementById('17');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
 		inputElement.style.height = '80px';

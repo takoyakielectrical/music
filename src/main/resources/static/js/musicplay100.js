@@ -424,7 +424,7 @@ document.getElementById('moon3').addEventListener('click', () => {
 
 });
 document.getElementById('traiangle1').addEventListener('click', () => {
-	play('./music/BPM90_3/BPM90_3-1.wav');
+	play('./music/BPM90_三角の人/三角の人1.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
@@ -433,16 +433,7 @@ document.getElementById('traiangle1').addEventListener('click', () => {
 	}
 });
 document.getElementById('traiangle2').addEventListener('click', () => {
-	play('./music/BPM90_3/BPM90_3-2.wav');
-	if (slideshowPausedNon) {
-		toggleSlideshowNon();
-	}
-	if (slideshowPausedRoa) {
-		toggleSlideshowRoa();
-	}
-});
-document.getElementById('traiangle3').addEventListener('click', () => {
-	play('./music/BPM90_3/BPM90_3-3.wav');
+	play('./music/BPM90_三角の人/三角の人2.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
@@ -451,7 +442,7 @@ document.getElementById('traiangle3').addEventListener('click', () => {
 	}
 });
 document.getElementById('beans1').addEventListener('click', () => {
-	play('./music/BPM90_3/BPM90_3-4.wav');
+	play('./music/BPM90_豆の人/豆の人1.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}
@@ -460,7 +451,7 @@ document.getElementById('beans1').addEventListener('click', () => {
 	}
 });
 document.getElementById('beans2').addEventListener('click', () => {
-	play('./music/BPM90_3/BPM90_3-5.wav');
+	play('./music/BPM90_豆の人/豆の人2.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();
 	}

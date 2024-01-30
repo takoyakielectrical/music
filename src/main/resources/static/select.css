@@ -80,7 +80,7 @@ h1.bottom{
   transition-duration: 0.5s;
   border-radius: 8px;
   width: 615.7px;
-  height: 223px;
+  height: 224px;
 }
 .hover-ticket::after {
   color: #fff;

@@ -433,15 +433,6 @@ document.getElementById('percent1').addEventListener('click', () => {
 	}
 });
 document.getElementById('percent2').addEventListener('click', () => {
-	play('./music/BPM100_Bgroup/Bgroup2.wav');
-	if (slideshowPausedNon) {
-		toggleSlideshowNon();
-	}
-	if (slideshowPausedRoa) {
-		toggleSlideshowRoa();
-	}
-});
-document.getElementById('percent3').addEventListener('click', () => {
 	play('./music/BPM100_Bgroup/Bgroup3.wav');
 	if (slideshowPausedNon) {
 		toggleSlideshowNon();

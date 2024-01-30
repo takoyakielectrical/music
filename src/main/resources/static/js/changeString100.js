@@ -125,7 +125,7 @@ document.getElementById('traiangle2').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('traiangle3').addEventListener('click', () => {
+document.getElementById('beans1').addEventListener('click', () => {
 	var inputElement = document.getElementById('8');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
@@ -143,26 +143,8 @@ document.getElementById('traiangle3').addEventListener('click', () => {
 	}
 });
 
-document.getElementById('beans1').addEventListener('click', () => {
-	var inputElement = document.getElementById('9');
-	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
-		inputElement.src = '/img/light/bright.png';
-		inputElement.style.height = '80px';
-		inputElement.style.width = '80px';
-		inputElement.style.marginTop = '-12.8px';
-		inputElement.style.marginLeft = '-7px';
-		
-	}else{
-		inputElement.src = '/img/light/dark.png';
-		inputElement.style.height = '60px';
-		inputElement.style.width = '60px';
-		inputElement.style.marginTop = '0';
-		inputElement.style.marginLeft = '0';
-	}
-});
-
 document.getElementById('beans2').addEventListener('click', () => {
-	var inputElement = document.getElementById('10');
+	var inputElement = document.getElementById('9');
 	if (inputElement.src === 'http://localhost:8080/img/light/dark.png') {
 		inputElement.src = '/img/light/bright.png';
 		inputElement.style.height = '80px';
